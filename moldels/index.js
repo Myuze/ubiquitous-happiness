@@ -22,3 +22,4 @@ Data.belongsTo(User, {
 })
 
   module.exports = { User, Post, Data };
+  
