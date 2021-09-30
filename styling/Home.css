@@ -73,11 +73,17 @@
   .u-section-1-3 .u-sheet-1 {
     min-height: 660px;
   }
+  .u-clearfix u-sheet u-sheet-1 {
+    width: 90%;
+  }
 }
 
 @media (max-width: 991px) {
   .u-section-1-3 .u-sheet-1 {
     min-height: 506px;
+  }
+  .u-clearfix u-sheet u-sheet-1 {
+    width: 90%;
   }
 }
 
