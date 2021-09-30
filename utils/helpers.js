@@ -1,4 +1,5 @@
 module.exports = {
+  // TODO: REPLACE SAMPLE HELPER FUNCTION
   get_emoji: () => {
     const randomNum = Math.random();
     let book = "📗";
