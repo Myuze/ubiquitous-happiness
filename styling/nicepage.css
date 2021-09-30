@@ -4,7 +4,7 @@
  * Copyright 2014-2020 Froala Labs
  */
 
-.fr-clearfix::after {
+ .fr-clearfix::after {
   clear: both;
   display: block;
   content: "";
@@ -34969,16 +34969,13 @@ a.u-link.u-text-hover-grey-90:hover {
 /*end-variables sitestylecss*/
 .u-header {
   background-image: none;
-}
-
-.u-header .u-sheet-1 {
-  min-height: 116px;
+  min-height: 122px;
 }
 
 .u-header .u-image-1 {
   width: 98px;
   height: 98px;
-  margin: 8px auto 0 -49px;
+  margin: 12px auto 0 0;
 }
 
 .u-header .u-logo-image-1 {
@@ -34987,11 +34984,11 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-menu-1 {
-  margin: -48px -69px 20px auto;
+  margin: -56px 0 24px auto;
 }
 
 .u-header .u-nav-1 {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   letter-spacing: -1px;
   font-family: "Permanent Marker";
 }
@@ -35004,34 +35001,138 @@ a.u-link.u-text-hover-grey-90:hover {
     width: auto;
   }
 }
-
-
-
-.u-footer {
-  background-image: none;
-}
-
-.u-footer .u-sheet-1 {
-  min-height: 38px;
-}
-@media (max-width: 1199px) {
-  .u-footer .u-sheet-1 {
-    min-height: 99px;
-  }
-}
 @media (max-width: 991px) {
-  .u-footer .u-sheet-1 {
-    min-height: 76px;
+  .u-header .u-image-1 {
+    margin-left: calc(((100% - 1140px) / 2) + 210px);
+  }
+
+  .u-header .u-menu-1 {
+    margin-top: -71px;
+    margin-right: calc(((100% - 720px) / 2));
+    margin-bottom: 39px;
   }
 }
 @media (max-width: 767px) {
-  .u-footer .u-sheet-1 {
-    min-height: 57px;
+  .u-header {
+    min-height: 79px;
+  }
+
+  .u-header .u-image-1 {
+    width: 79px;
+    height: 79px;
+    margin-top: 0;
+    margin-left: calc(((100% - 540px) / 2));
+  }
+
+  .u-header .u-menu-1 {
+    margin-top: -60px;
+    margin-right: calc(((100% - 540px) / 2));
+    margin-bottom: 18px;
   }
 }
 @media (max-width: 575px) {
-  .u-footer .u-sheet-1 {
-    min-height: 36px;
+  .u-header {
+    min-height: 74px;
+  }
+
+  .u-header .u-image-1 {
+    width: 62px;
+    height: 62px;
+    margin-left: calc(((100% - 340px) / 2));
+  }
+
+  .u-header .u-menu-1 {
+    margin-top: -50px;
+    margin-right: calc(((100% - 340px) / 2));
+    margin-bottom: 18px;
+  }
+}
+.u-footer {
+  min-height: 106px;
+}
+
+.u-footer .u-image-1 {
+  width: 96px;
+  height: 96px;
+  margin: 5px 0 0 auto;
+}
+
+.u-footer .u-logo-image-1 {
+  width: 100%;
+  height: 100%;
+}
+
+.u-footer .u-text-1 {
+  font-family: "Permanent Marker";
+  margin: -66px auto 35px;
+}
+
+.u-footer .u-btn-1 {
+  background-image: none;
+  font-size: 1.875rem;
+  padding: 0;
+}
+@media (max-width: 1199px) {
+  .u-footer .u-text-1 {
+    width: auto;
+    margin-left: calc(((100% - 940px) / 2));
+  }
+}
+@media (max-width: 991px) {
+  .u-footer {
+    min-height: 77px;
+  }
+
+  .u-footer .u-image-1 {
+    width: 65px;
+    height: 65px;
+    margin-top: 6px;
+    margin-right: calc(((100% - 1140px) / 2) + 243px);
+  }
+
+  .u-footer .u-text-1 {
+    margin-top: -50px;
+    margin-bottom: 21px;
+    margin-left: calc(((100% - 1140px) / 2) + 270px);
+  }
+}
+@media (max-width: 767px) {
+  .u-footer {
+    min-height: 65px;
+  }
+
+  .u-footer .u-image-1 {
+    width: 59px;
+    height: 59px;
+    margin-top: 3px;
+    margin-right: calc(((100% - 540px) / 2));
+  }
+
+  .u-footer .u-text-1 {
+    margin-top: -47px;
+    margin-bottom: 15px;
+    margin-left: calc(((100% - 540px) / 2) + 57px);
+  }
+
+  .u-footer .u-btn-1 {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 575px) {
+  .u-footer {
+    min-height: 38px;
+  }
+
+  .u-footer .u-image-1 {
+    margin-right: 0;
+  }
+
+  .u-footer .u-text-1 {
+    margin: 0 -17px 10px calc(((100% - 1140px) / 2) + 417px);
+  }
+
+  .u-footer .u-btn-1 {
+    font-size: 1.125rem;
   }
 }
 
