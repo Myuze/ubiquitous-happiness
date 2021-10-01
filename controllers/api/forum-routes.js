@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
       res.json(err);
     });
       const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
-    res.render("display", { forumPosts });
+    res.render('display', { forumPosts });
   });
 
 // gets one forum post by id
