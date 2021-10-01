@@ -26,7 +26,7 @@ router.get("/:id", async (req, res) => {
       res.json(err);
     });
 
-    res.render("display", { user, forumPost } );
+    res.render('display', { user, forumPost } );
   });
 
   module.exports = router
