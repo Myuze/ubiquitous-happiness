@@ -4,6 +4,9 @@ const apiRoutes = require('./api');
 const globalController = require('./globalController');
 const viewControllers = require("./viewControllers")
 
+const homeRoutes = require('./home-routes');
+
+
 router.use('/', globalController);
 router.use('/api', apiRoutes);
 router.use('/view', viewControllers);
