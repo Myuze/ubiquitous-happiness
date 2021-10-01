@@ -1,4 +1,4 @@
-<!-- TO BE REPLACED WITH BUTTON -->
+<!-- TO BE REPLACED WITH LINK TO LOGIN NOT BUTTON -->
 <button id="modalBtn" class="logInButton">LOG IN</button>
 
 <div id="infoModal" class="modal">
@@ -18,11 +18,20 @@
         /><br />
         <label for="password">What would you like to make your password?(MIN RQS
           HERE)</label><br />
-        <input type="password" id="password" name="password" required /><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          minlength="8"
+          {{! THIS MAKES THE PASSWORD REQUIRE A FEW THIGS }}
+          pattern="^(?=.*[A-Za-z])(?=.*\\\\\\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,50}$"
+          required
+        /><br />
 
         <button type="submit" class="submitModal" id="submit">
           LETS GO!
         </button>
+        <a href="/signup">Wait, are you signed up? Cause you should be!</a>
       </form>
     </div>
   </div>
