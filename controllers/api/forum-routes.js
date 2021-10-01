@@ -1,5 +1,4 @@
 const router = require('express').Router();
-<<<<<<< HEAD
 const { User , Post } = require('../../models');
 
 //gets all forum posts
@@ -13,11 +12,11 @@ router.get("/", async (req, res) => {
       res.json(err);
     });
       const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
-    res.render("display", { forumPosts });
+    res.render('display', { forumPosts });
   });
 
 // gets one forum post by id
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
     const { user } = req.session;
     const  forumPost = await Post.findOne({
         where: {
@@ -27,11 +26,10 @@ router.get("/:id", async (req, res) => {
       res.json(err);
     });
 
-    res.render("display", { user, forumPost } );
+    res.render('display', { user, forumPost } );
   });
 
   module.exports = router
-=======
 const { User } = require('../../models');
 
 router.get('/', async (req, res) => {
@@ -51,4 +49,3 @@ router.get('/', async (req, res) => {
 });
 
 module.exports = router;
->>>>>>> dde5ae0195c07015e51679b2a1fa2a56fe2f6da9
