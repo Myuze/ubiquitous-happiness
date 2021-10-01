@@ -1,4 +1,5 @@
 const router = require('express').Router();
+<<<<<<< HEAD
 const { User , Post } = require('../../models');
 
 //gets all forum posts
@@ -30,3 +31,24 @@ router.get("/:id", async (req, res) => {
   });
 
   module.exports = router
+=======
+const { User } = require('../../models');
+
+router.get('/', async (req, res) => {
+  try {
+    const dbUserData = await User.findAll();
+    
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).render('forum', { dbUserData });
+    });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+});
+
+module.exports = router;
+>>>>>>> dde5ae0195c07015e51679b2a1fa2a56fe2f6da9

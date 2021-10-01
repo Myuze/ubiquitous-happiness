@@ -9,9 +9,9 @@ Create a community forum to track trending-up streamers, featured streams, game 
 ## Table of Contents:
 
 ---
-1. [Installation Instructions](#key-features)
-2. [Usage](#user-story)
-3. [Test Instructions](#breakdown)
+1. [Key Features](#key-features)
+2. [User Story](#user-story)
+3. [Breakdown](#breakdown)
 4. [Contribute](#contributors)
 5. [Licenses](#licenses)
 
@@ -61,6 +61,7 @@ Create a community forum to track trending-up streamers, featured streams, game 
 - Mike Rogers
 - Evelyn Nguyen
 - Nikki Mounce
+- Florian Meneses
 
 ## Licenses:
 
