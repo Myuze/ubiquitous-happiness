@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
   });
 
 // gets one forum post by id
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
     const { user } = req.session;
     const  forumPost = await Post.findOne({
         where: {
