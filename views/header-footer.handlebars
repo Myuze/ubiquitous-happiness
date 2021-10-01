@@ -1,0 +1,59 @@
+<header class="header" id="header-all-pages">
+        <a href="/home" class="header-logo-go-to-home">
+        <img src="images/UBIQUITOUS2.png" class="logo">
+        </a>
+        <nav class="nav-pane">
+            <div class="nav-menu"style="font-size: 1.5rem; letter-spacing: -1px; font-family: &quot;Permanent Marker&quot;;">
+                <a class="menu-button" href="#" style="font-size: calc(1em + 10px); background-image: none;">
+                    <svg>
+                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+                  </svg>
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <defs>
+                        <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
+                           <rect y="1" width="16" height="2"></rect>
+                           <rect y="7" width="16" height="2"></rect>
+                           <rect y="13" width="16" height="2"></rect>
+                        </symbol>
+                     </defs>
+                  </svg>
+                </a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-bar">
+                    <li class="nav-item">
+                        <a class="nav-button" href="/home" style="padding: 10px; text-shadow: 2px 4px 8px rgba(32,226,58,0.4)">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-button" href="/blog" style="padding: 10px; text-shadow: 2px 4px 8px rgba(32,226,58,0.4)">Blog</a>
+                    </li>
+                    {{#if loggedOut}}
+                    <li class="nav-item">
+                        <a class="nav-button" href="/login" style="padding: 10px; text-shadow: 2px 4px 8px rgba(32,226,58,0.4)">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-button" href="/register" style="padding: 10px; text-shadow: 2px 4px 8px rgba(32,226,58,0.4)">Register</a>
+                    </li>
+                    <li>
+                        {{#if loggedIn}}
+                        <a class="nav-button" href="/logout" style="padding: 10px; text-shadow: 2px 4px 8px rgba(32,226,58,0.4)">Logout</a>
+                        {{/if}}
+                    </li>
+                </ul>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </nav>
+    </header>
+    <main>
+        {{{ body }}}
+    </main>
+    <footer class="footer u-black u-clearfix u-footer u-footer" id="sec-a5e1">
+         <a href="https://nicepage.com" class="footer-logo u-hidden-xs u-image u-logo u-image-1" data-image-width="500" data-image-height="500">
+         <img src="images/UBIQUITOUS2.png" class="u-logo-image u-logo-image-1">
+         </a>
+         <h3 class="footer-link u-custom-font u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">
+            <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-white u-text-custom-color-1 u-text-hover-palette-3-dark-1 u-btn-1" href="/register" data-page-id="2861620506">Not a member...yet? Sign up today!</a>
+         </h3>
+      </footer>
+  </body>
+</html>
