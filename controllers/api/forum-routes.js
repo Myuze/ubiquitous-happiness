@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User , Post } = require('../../models');
 
 //gets all forum posts
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
     const forumData = await Post.findAll({
       include: {
         model: 'User',
