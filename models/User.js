@@ -44,6 +44,12 @@ User.init(
     bio: {
       type: DataTypes.TEXT,
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      isEmail: true
+    }
   },
   {
     hooks: {
