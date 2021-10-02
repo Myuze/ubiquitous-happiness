@@ -1,5 +1,5 @@
 {
-  "name": "tech-blog-fm",
+  "name": "ubiquitous-happiness",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,9 @@
     "watch": "nodemon server.js",
     "start": "node server.js",
     "seed": "node seeds/seed.js",
-    "lint": "npx eslint **/*.js --quiet && exit 0",
+    "lint": "npx eslint **/*.js --quiet",
+    "lint-verbose": "npx eslint **/*.js",
+    "lint-fix": "npx eslint **/*.js --fix",
     "test": "npm run lint"
   },
   "repository": {
