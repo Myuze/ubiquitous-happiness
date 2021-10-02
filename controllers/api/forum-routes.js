@@ -1,32 +1,32 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { User , Post } = require('../../models');
 
+//gets all forum posts
 router.get('/', async (req, res) => {
-  try {
-    const dbForumData = await Post.findAll();
+    const forumData = await Post.findAll({
+      include: {
+        model: 'User',
+        attributes: [ 'id', 'username' ]
+      }
+    }).catch((err) => { 
+      res.json(err);
+    });
+      const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
+    res.render('forum', { forumPosts });
+  });
 
-    const forums = dbForumData.map((forum) => forum.get({ plain: true }));
-    
-    req.session.save(() => {
-      req.session.loggedIn = true;
-
-      res.status(200).render('forum', {forums});
+// gets one forum post by id
+router.get('/:id', async (req, res) => {
+    const { user } = req.session;
+    const  forumPost = await Post.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).catch((err) => { 
+      res.json(err);
     });
 
-  } catch (err) {
-    console.log(err);
-    res.status(500);
-  }
-});
-
-router.get('/:id', async (req, res) => {
-  const dbForumData = await Post.findByPk(req.params.id);
-
-  const forum = dbForumData.get({ plain: true })
-
-  res.render('forum-post', forum);
-});
-
-router.get('/new-post', (req, res) => res.render('add-post'));
+    res.render('forum-post', { user, forumPost } );
+  });
 
 module.exports = router;
