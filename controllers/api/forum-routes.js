@@ -41,6 +41,25 @@ router.get('/:id', async (req, res) => {
     res.render('forum-post', { user, forumPost } );
   });
 
+<<<<<<< HEAD
+=======
+router.get('/', async (req, res) => {
+  try {
+    const dbUserData = await User.findAll();
+    
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).render('forum', { dbUserData });
+    });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+});
+
+>>>>>>> b605fc2ac6252859344ba4fff585fc5a069260c5
 //post route for making a new post inserting into db
 router.post('/', async (req, res) => {
   const user = req.session
@@ -78,4 +97,5 @@ router.post('/', withAuth, (req, res) => {
           res.status(500).json(err);
       });
 });
+
 module.exports = router;
