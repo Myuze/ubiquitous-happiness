@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      // res.status(200).json({dbForumData});
       res.status(200).render('forum', {forums});
     });
 
