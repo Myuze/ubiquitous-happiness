@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User , Post } = require('../../models');
 const withAuth = require('../../utils/auth')
+//all forum routes in the api have been updated  as of 10/2/2021 @ 12:44pm
 
 //gets all forum posts
 router.get('/', async (req, res) => {
@@ -118,3 +119,4 @@ router.post('/', withAuth, (req, res) => {
 });
 
 module.exports = router;
+
