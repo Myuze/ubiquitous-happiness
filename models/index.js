@@ -14,7 +14,7 @@ Post.belongsTo(User, {
 
 User.hasOne(Data, {
     foreignKey: 'data_id',
-    onDelete: "CASCADE"
+    onDelete: 'CASCADE'
 });
 
 Data.belongsTo(User, {
