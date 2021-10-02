@@ -28,4 +28,6 @@ router.get('/:id', async (req, res) => {
   res.render('forum-post', forum);
 });
 
+router.get('/new-post', (req, res) => res.render('add-post'));
+
 module.exports = router;
