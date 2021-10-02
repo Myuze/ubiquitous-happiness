@@ -1,13 +1,17 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// CREATE new user
-router.post('/', async (req, res) => {
+// CREATE new user- update with model
+router.post('/register', async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
+      twitch_link: req.body.twitch,
+      youtube_link: req.body.youtube,
+      bio: req.body.bio
+
     });
 
     req.session.save(() => {
@@ -69,5 +73,6 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
 
 module.exports = router;
