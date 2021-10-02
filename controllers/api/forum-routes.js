@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User , Post } = require('../../models');
 const withAuth = require('../../utils/auth')
-//all forum routes in the api have been updated  as of 10/2/2021 @ 12:44pm
+//all forum routes in the api have been updated  as of 10/2/2021 @ 12:51pm
 
 //gets all forum posts
 router.get('/', async (req, res) => {
@@ -67,7 +67,8 @@ router.get('/:id', async (req, res) => {
       res.json(err);
     });
 
-    res.render('forum-post', { forumPost } );
+    const serialized = forumPost.get({ plain: true })
+    res.render('forum-post', serialized);
   }});
 
 //post route for making a new post inserting into db

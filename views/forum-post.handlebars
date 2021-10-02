@@ -1,26 +1,20 @@
-{{log 'thisNew' forumPost}}
-{{log 'thisNewData' forumPost.dataValues}}
-{{log 'thisNewDataId' forumPost.dataValues.title}}
-
-{{#with forumPost.dataValues as | blog |}}
-{{log 'thisNewDataBlog' blog}}
 <class class="container">
     <section class="header">
-        <h1 class="forum-title">{{blog.title}}</h1>
-        <a href="/profile/{{blog.author_id}}">
-            <h3 class="author-id">{{blog.author}}</h3>
+        <h1 class="forum-title">{{title}}</h1>
+        <a href="/profile/{{author_id}}">
+            <h3 class="author-id">{{author}}</h3>
         </a>
     </section>
 
     <section class="entry">
-        <p class="forum-entry">{{blog.entry}}</p>
+        <p class="forum-entry">{{entry}}</p>
     </section>
 
     <section class="comments">
     {{> comments}}
     </section>
 </class>
-{{/with}}
+
 <a href="/forum/new-post">
     <button class="create-new-post">Add Post</button>
 </a>
