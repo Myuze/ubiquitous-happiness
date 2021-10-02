@@ -1,1 +1,54 @@
+<<<<<<< HEAD
 <h1>This is login</h1>
+=======
+{{#if message}}
+  <div class='error'>
+    {{message}}
+  </div>
+{{/if}}
+
+{{#unless user}}
+  <div id='infoModal' class='modal'>
+    <div class='modalContent'>
+      <div class='modalHeader'>
+        <span id='closeBtn'>&#x2718;</span>
+        <h2>Registration</h2>
+      </div>
+      <div class='modalBody'>
+        <form action='/api/users/login' method='post' id='info'>
+          <label for='email'>What is your email?</label><br />
+          <input
+            type='email'
+            id='email'
+            name='email'
+            value='Supergoodgamer@email.com'
+          /><br />
+          <label for='password'>What would you like to make your password?(MIN
+            RQS HERE)</label><br />
+          <input
+            type='password'
+            id='password'
+            name='password'
+            minlength='8'
+            maxlength='50'
+            {{! THIS MAKES THE PASSWORD REQUIRE A FEW THIGS }}
+            pattern='^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,50}$'
+            required
+          /><br />
+
+          <button type='submit' class='submitModal' id='submit'>
+            LETS GO!
+          </button>
+          <a href='/signup'>Wait, are you signed up? Cause you should be!</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src='/js/modal.js'></script>
+
+{{else}}
+
+  <h1>Hol' up yo!</h1>
+{{/unless}}
+>>>>>>> f11e40d2aaa24903c28a1ec7a398f67f5deb6c87
