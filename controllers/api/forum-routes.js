@@ -3,7 +3,7 @@ const { User , Post } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 //gets all forum posts
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
     const forumData = await Post.findAll({
       include: {
         model: 'User',
