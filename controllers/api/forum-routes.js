@@ -3,6 +3,7 @@ const { User , Post } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 //gets all forum posts
+<<<<<<< HEAD
 router.get("/", async (req, res) => {
   const { user } = req.session
 
@@ -14,6 +15,9 @@ router.get("/", async (req, res) => {
   }
 
   if(user){
+=======
+router.get('/', async (req, res) => {
+>>>>>>> b21c7ae296845e0a3183bbfcba256021636c7474
     const forumData = await Post.findAll({
       include: {
         model: 'User',
@@ -23,8 +27,13 @@ router.get("/", async (req, res) => {
       res.json(err);
     });
       const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
+<<<<<<< HEAD
     res.render('forum', { forumPosts, user });
   }});
+=======
+    res.render('forum', { forumPosts });
+  });
+>>>>>>> b21c7ae296845e0a3183bbfcba256021636c7474
 
 // gets one forum post by id
 router.get('/:id', async (req, res) => {
@@ -37,7 +46,11 @@ router.get('/:id', async (req, res) => {
       res.json(err);
     });
 
+<<<<<<< HEAD
     res.render('forum', { user, forumPost } );
+=======
+    res.render('forum-post', { user, forumPost } );
+>>>>>>> b21c7ae296845e0a3183bbfcba256021636c7474
   });
 
   module.exports = router

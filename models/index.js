@@ -14,13 +14,13 @@ Post.belongsTo(User, {
 
 User.hasOne(Data, {
     foreignKey: 'data_id',
-    onDelete: "CASCADE"
+    onDelete: 'CASCADE'
 });
 
 Data.belongsTo(User, {
-    foreignKey: "data_id",
-    onDelete: "CASCADE"
-})
+    foreignKey: 'data_id',
+    onDelete: 'CASCADE'
+});
 
 User.hasMany(Game, {
   foreignKey: 'game_id',
@@ -31,5 +31,4 @@ Game.belongsTo(User, {
   foreignKey: 'game_id'
 })
 
-  module.exports = { User, Post, Data };
-  
+module.exports = { User, Post, Data };
