@@ -1,1 +1,15 @@
 <h3>This is the Forum</h3>
+
+{{#each forums as |forum|}}
+<section class="forums">
+      <a href="/forum/{{id}}">
+          <div class="blog-post-header">
+            <h4>{{title}}</h1>
+          </div>
+      </a>
+</section>
+{{/each}}
+
+<a href="/new-post">
+    <button class="create-new-post">Add Post</button>
+</a>

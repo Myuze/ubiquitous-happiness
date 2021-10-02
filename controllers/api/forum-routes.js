@@ -1,14 +1,17 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Post } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const dbUserData = await User.findAll();
+    const dbForumData = await Post.findAll();
+
+    const forums = dbForumData.map((forum) => forum.get({ plain: true }));
     
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      res.status(200).render('forum', { dbUserData });
+      // res.status(200).json({dbForumData});
+      res.status(200).render('forum', {forums});
     });
 
   } catch (err) {
