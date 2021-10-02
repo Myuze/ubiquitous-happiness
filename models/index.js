@@ -32,3 +32,4 @@ Game.belongsTo(User, {
 })
 
   module.exports = { User, Post, Data };
+  
