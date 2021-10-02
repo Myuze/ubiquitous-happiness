@@ -30,8 +30,6 @@ router.get('/:id', async (req, res) => {
     res.render('forum-post', { user, forumPost } );
   });
 
-  module.exports = router
-
 router.get('/', async (req, res) => {
   try {
     const dbUserData = await User.findAll();
@@ -86,4 +84,5 @@ router.post('/', withAuth, (req, res) => {
           res.status(500).json(err);
       });
 });
+
 module.exports = router;
