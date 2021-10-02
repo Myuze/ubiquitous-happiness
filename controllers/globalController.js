@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Post } = require("../models")
 
 router.get('/', async (req, res) => {
-    const user = req.session
+    const user = req.session;
     const postData = await Post.findAll().catch((err) => {
         res.json(err)
     })
