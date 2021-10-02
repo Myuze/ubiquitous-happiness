@@ -10,6 +10,16 @@
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <nav class="navigation">
+        <a href="/">Home Page</a>
+        <a href="/leadership">Leadership</a>
+        {{#if logged_in}}
+        <a href="/logout">Logout</a>
+        {{else}}
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+        {{/if}}
+    </nav>
     <main class="container container-fluid mt-5">
         {{! other rendered handlebars will appear here in body}}
         {{{ body }}}
