@@ -21,5 +21,4 @@ Data.belongsTo(User, {
     onDelete: 'CASCADE'
 });
 
-  module.exports = { User, Post, Data };
-  
+module.exports = { User, Post, Data };
