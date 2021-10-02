@@ -4,6 +4,9 @@ const withAuth = require('../../utils/auth')
 
 //gets all forum posts
 router.get('/', async (req, res) => {
+    const { user } = req.session
+    
+    if (user){
     const forumData = await Post.findAll({
       include: {
         model: 'User',
@@ -12,39 +15,46 @@ router.get('/', async (req, res) => {
     }).catch((err) => { 
       res.json(err);
     });
-      const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
+    const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
     res.render('forum', { forumPosts });
-  });
+  }
+    else if(!user){
+      const forumData = await Post.findAll(
+      ).catch((err) => { 
+        res.json(err);
+      });
+        const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
+      res.render('forum', { forumPosts });
+    }
+});
 
 // gets one forum post by id
 router.get('/:id', async (req, res) => {
     const { user } = req.session;
-    const  forumPost = await Post.findOne({
-        where: {
-            id: req.params.id
-        }
-    }).catch((err) => { 
-      res.json(err);
-    });
 
-    res.render('forum-post', { user, forumPost } );
+    if (user) {
+      const  forumPosts = await Post.findOne({
+          where: {
+              id: req.params.id
+          }
+      }).catch((err) => { 
+        res.json(err);
+      });
+      res.render('forum-post', { user, forumPosts } );
+    }
+      else if (!user) {
+        const  forumPosts = await Post.findOne({
+          where: {
+              id: req.params.id
+          }
+      }).catch((err) => { 
+        res.json(err);
+      });
+      res.render('forum-post', forumPosts );
+      // console.log(forumPosts)
+      // res.json(forumPosts);
+      }
   });
-
-router.get('/', async (req, res) => {
-  try {
-    const dbUserData = await User.findAll();
-    
-    req.session.save(() => {
-      req.session.loggedIn = true;
-
-      res.status(200).render('forum', { dbUserData });
-    });
-
-  } catch (err) {
-    console.log(err);
-    res.status(500);
-  }
-});
 
 //post route for making a new post inserting into db
 router.post('/', async (req, res) => {
@@ -55,7 +65,6 @@ router.post('/', async (req, res) => {
         .status(400)
         .redirect('/login', {message: 'please login to make a new post'})
     }
-
     if (user){
       const dbPostData = await Post.create({
         title: req.body.title,
@@ -70,7 +79,6 @@ router.post('/', async (req, res) => {
     console.log(err)
   }
 })
-
 
 router.post('/', withAuth, (req, res) => {
   Post.create({
