@@ -1,25 +1,34 @@
-const User = require("./User")
-const Post = require("./Post")
-const Data = require("./Data")
+const User = require('./User')
+const Post = require('./Post')
+const Data = require('./Data');
+const Game = require('./Game');
 
 User.hasMany(Post, {
-    foreignKey: "author_id",
-    onDelete: "CASCADE",
+    foreignKey: 'author_id',
+    onDelete: 'CASCADE',
   });
   
 Post.belongsTo(User, {
-    foreignKey: "author_id",
+    foreignKey: 'author_id',
   });
 
 User.hasOne(Data, {
-    foreignKey: "data_id",
-    onDelete: "CASCADE"
+    foreignKey: 'data_id',
+    onDelete: 'CASCADE'
 });
 
 Data.belongsTo(User, {
-    foreignKey: "data_id",
-    onDelete: "CASCADE"
+    foreignKey: 'data_id',
+    onDelete: 'CASCADE'
+});
+
+User.hasMany(Game, {
+  foreignKey: 'game_id',
+  onDelete: 'CASCADE'
 })
 
-  module.exports = { User, Post, Data };
-  
+Game.belongsTo(User, {
+  foreignKey: 'game_id'
+})
+
+module.exports = { User, Post, Data };
