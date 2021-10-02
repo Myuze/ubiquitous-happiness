@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User , Post } = require('../../models');
+const withAuth = require('../../utils/auth')
 
 //gets all forum posts
 router.get('/', async (req, res) => {
@@ -28,5 +29,60 @@ router.get('/:id', async (req, res) => {
 
     res.render('forum-post', { user, forumPost } );
   });
+
+router.get('/', async (req, res) => {
+  try {
+    const dbUserData = await User.findAll();
+    
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).render('forum', { dbUserData });
+    });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+});
+
+//post route for making a new post inserting into db
+router.post('/', async (req, res) => {
+  const user = req.session
+  try {
+    if (!user){
+      res
+        .status(400)
+        .redirect('/login', {message: 'please login to make a new post'})
+    }
+
+    if (user){
+      const dbPostData = await Post.create({
+        title: req.body.title,
+        entry: req.body.content,
+        user_id: req.session.user_id
+    })
+      res
+        .status(200)
+        .json(dbPostData)
+    }
+  } catch (err) {
+    console.log(err)
+  }
+})
+
+
+router.post('/', withAuth, (req, res) => {
+  Post.create({
+          title: req.body.title,
+          content: req.body.content,
+          user_id: req.session.user_id
+      })
+      .then(dbPostData => res.json(dbPostData))
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+});
 
 module.exports = router;
