@@ -5,15 +5,10 @@
   "main": "index.js",
   "scripts": {
     "watch": "nodemon server.js",
-<<<<<<< HEAD
-    "start": "nodemon server.js",
-    "seed": "node seeds/seed.js"
-=======
     "start": "node server.js",
     "seed": "node seeds/seed.js",
     "lint": "npx eslint **/*.js --quiet && exit 0",
     "test": "npm run lint"
->>>>>>> b21c7ae296845e0a3183bbfcba256021636c7474
   },
   "repository": {
     "type": "git",
