@@ -5,71 +5,75 @@ const withAuth = require('../../utils/auth');
 
 //gets all forum posts
 router.get('/', async (req, res) => {
-  console.log(req.session);
-    const { user } = req.session;
+  const { user } = req.session;
 
-    if (user){
-    const forumData = await Post.findAll({
-      include: {
-        model: 'User',
-        attributes: [ 'id', 'username' ]
-      }
-    })
+  if (user){
+  const forumData = await Post.findAll({
+    include: {
+      model: 'User',
+      attributes: [ 'id', 'username' ]
+    }
+  })
 
-    .catch((err) => { 
-      res
-        .status(500)
-        .json(err);
+  .catch((err) => { 
+    res
+      .status(500)
+      .json(err);
+  });
+
+    const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
+  res
+  .status(200)
+  .render('forum', { forumPosts });
+    }
+
+  else if(!user){
+    const forumData = await Post.findAll(
+    ).catch((err) => { 
+      res.json(err);
     });
 
-      const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
-    res
-    .status(200)
-    .render('forum', { forumPosts });
-  }
-    else if(!user){
-      const forumData = await Post.findAll(
-      ).catch((err) => { 
-        res.json(err);
-      });
-        const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
-      console.log(forumPosts);
-      res.render('forum', { forumPosts });
+    const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
+
+    res.render('forum', { forumPosts });
     }
 });
 
 // gets one forum post by id
 router.get('/:id', async (req, res) => {
-    const { user } = req.session;
+  const { user } = req.session;
 
-    if (user){
-      const  forumPost = await Post.findOne({
-        where: {
-            id: req.params.id,
-            include: {
-              model: 'User',
-              attributes: [ 'id', 'username' ]
-            }
-        }
-    }).catch((err) => { 
-      res.json(err);
-    });
+  if (user){
+    const  forumPost = await Post.findOne({
+      where: {
+          id: req.params.id,
+          include: {
+            model: 'User',
+            attributes: [ 'id', 'username' ]
+          }
+      }
+  }).catch((err) => { 
+    res.json(err);
+  });
 
     res.render('forum-post', { forumPost } );
-    }
+  }
 
-    else if (!user){
-    const  forumPost = await Post.findOne({
-        where: {
-            id: req.params.id
-        }
-    }).catch((err) => { 
-      res.json(err);
-    });
+  else if (!user){
+  const  forumPost = await Post.findOne({
+      where: {
+          id: req.params.id
+      }
+  }).catch((err) => { 
+    res
+    .json(err);
+  });
 
     const serialized = forumPost.get({ plain: true });
+
     res.render('forum-post', serialized);
-  }});
+  }
+});
 
 //post route for making a new post inserting into db
 router.post('/', async (req, res) => {

@@ -14,7 +14,7 @@ router.get('/login', async (req, res) => {
 
       if(!user){
           res
-          .status(400)
+          .status(200)
           .render('login')
       }
   } catch (err) {
