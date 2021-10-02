@@ -4,6 +4,16 @@ const withAuth = require('../../utils/auth')
 
 //gets all forum posts
 router.get("/", async (req, res) => {
+  const { user } = req.session
+
+  if (!user) {
+    const forumData = await Post.findAll()
+    const forumPosts = forumData.map((fpost) => fpost.get ({ plain: true }))
+
+    res.render('forum', { forumPosts })
+  }
+
+  if(user){
     const forumData = await Post.findAll({
       include: {
         model: 'User',
@@ -13,8 +23,8 @@ router.get("/", async (req, res) => {
       res.json(err);
     });
       const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
-    res.render('display', { forumPosts });
-  });
+    res.render('forum', { forumPosts, user });
+  }});
 
 // gets one forum post by id
 router.get('/:id', async (req, res) => {
@@ -27,26 +37,10 @@ router.get('/:id', async (req, res) => {
       res.json(err);
     });
 
-    res.render('display', { user, forumPost } );
+    res.render('forum', { user, forumPost } );
   });
 
   module.exports = router
-
-router.get('/', async (req, res) => {
-  try {
-    const dbUserData = await User.findAll();
-    
-    req.session.save(() => {
-      req.session.loggedIn = true;
-
-      res.status(200).render('forum', { dbUserData });
-    });
-
-  } catch (err) {
-    console.log(err);
-    res.status(500);
-  }
-});
 
 //post route for making a new post inserting into db
 router.post('/', async (req, res) => {
