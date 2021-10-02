@@ -4,25 +4,35 @@ const withAuth = require('../../utils/auth')
 
 //gets all forum posts
 router.get('/', async (req, res) => {
+  console.log(req.session)
     const { user } = req.session
+
     if (user){
     const forumData = await Post.findAll({
       include: {
         model: 'User',
         attributes: [ 'id', 'username' ]
       }
-    }).catch((err) => { 
-      res.json(err);
+    })
+
+    .catch((err) => { 
+      res
+        .status(500)
+        .json(err);
     });
+
       const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
-    res.render('forum', { forumPosts });
+    res
+    .status(200)
+    .render('forum', { forumPosts });
   }
-    if(!user){
+    else if(!user){
       const forumData = await Post.findAll(
       ).catch((err) => { 
         res.json(err);
       });
         const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
+      console.log(forumPosts)
       res.render('forum', { forumPosts });
     }
 });
@@ -30,6 +40,24 @@ router.get('/', async (req, res) => {
 // gets one forum post by id
 router.get('/:id', async (req, res) => {
     const { user } = req.session;
+
+    if (user){
+      const  forumPost = await Post.findOne({
+        where: {
+            id: req.params.id,
+            include: {
+              model: 'User',
+              attributes: [ 'id', 'username' ]
+            }
+        }
+    }).catch((err) => { 
+      res.json(err);
+    });
+
+    res.render('forum-post', { forumPost } );
+    }
+
+    else if (!user){
     const  forumPost = await Post.findOne({
         where: {
             id: req.params.id
@@ -38,28 +66,9 @@ router.get('/:id', async (req, res) => {
       res.json(err);
     });
 
-    res.render('forum-post', { user, forumPost } );
-  });
+    res.render('forum-post', { forumPost } );
+  }});
 
-<<<<<<< HEAD
-=======
-router.get('/', async (req, res) => {
-  try {
-    const dbUserData = await User.findAll();
-    
-    req.session.save(() => {
-      req.session.loggedIn = true;
-
-      res.status(200).render('forum', { dbUserData });
-    });
-
-  } catch (err) {
-    console.log(err);
-    res.status(500);
-  }
-});
-
->>>>>>> b605fc2ac6252859344ba4fff585fc5a069260c5
 //post route for making a new post inserting into db
 router.post('/', async (req, res) => {
   const user = req.session
@@ -86,6 +95,10 @@ router.post('/', async (req, res) => {
 })
 
 router.post('/', withAuth, (req, res) => {
+  const { user } = req.session
+
+  if (user){
+
   Post.create({
           title: req.body.title,
           content: req.body.content,
@@ -96,6 +109,12 @@ router.post('/', withAuth, (req, res) => {
           console.log(err);
           res.status(500).json(err);
       });
+}
+  else if (!user){
+    res
+    .status(400)
+    .render('login', { message: 'please login to make a new post'})
+  }
 });
 
 module.exports = router;
