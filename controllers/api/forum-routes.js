@@ -20,4 +20,12 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  const dbForumData = await Post.findByPk(req.params.id);
+
+  const forum = dbForumData.get({ plain: true })
+
+  res.render('forum-post', forum);
+});
+
 module.exports = router;
