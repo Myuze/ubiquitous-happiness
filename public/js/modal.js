@@ -26,6 +26,5 @@ var form = document.getElementById("info");
 //Blocks button from reloading page and calls functions to occur
 submit.addEventListener("click", function (e) {
   e.preventDefault();
-  storeUser();
   closeModal();
 });
