@@ -1,0 +1,20 @@
+[
+  {
+    "game_category_name": "Action"
+  },
+  {
+    "game_category_name": "RPG"
+  },
+  {
+    "game_category_name": "Platformer"
+  },
+  {
+    "game_category_name": "Strategy"
+  },
+  {
+    "game_category_name": "FPS"
+  },
+  {
+    "game_category_name": "RTS"
+  }
+]

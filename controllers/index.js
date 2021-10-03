@@ -10,7 +10,6 @@ router.use('/api', apiRoutes);
 router.use('/forum', forumRoutes);
 router.use('/user', userRoutes);
 router.use('/register', registerRoutes);
-router.use('/home', homeRoutes);
 router.use('*', homeRoutes);
 
 module.exports = router;
