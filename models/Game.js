@@ -12,22 +12,21 @@ Game.init(
       primaryKey: true,
     },
     game_name: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false
     },
     game_image_URL: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING
     },
     game_video_URL: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING
     },
-    game_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'User',
-            key: 'id'
-        }
+    game_category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'game_category',
+        key: 'id'
+      }
     }
   },
   {
@@ -35,7 +34,7 @@ Game.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'data',
+    modelName: 'game',
   }
 );
 
