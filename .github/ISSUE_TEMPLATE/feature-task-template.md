@@ -1,7 +1,7 @@
 ---
 name: Feature Task Template
 about: Basic requirements for a User Story
-title: "[TASK][<area>"
+title: "[TASK][<area>]"
 labels: task
 assignees: ''
 
