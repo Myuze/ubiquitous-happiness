@@ -1,1 +1,34 @@
-<h3>This is the Register page</h3>
+<form action ='/users/register' method='post' id='register'>
+<div class='container'>
+    <h1>Lets get you signed up!</h1>
+<label for='email'>Please enter your email.</label>
+<input
+            type='email'
+            id='email'
+            name='email'
+            placeholder='Supergoodgamer@email.com'/>
+<label for='password'>What would you like to make your password?(MIN
+            RQS HERE)</label><br />
+          <input
+            type='password'
+            id='password'
+            name='password'
+            minlength='8'
+            maxlength='50'
+            {{! THIS MAKES THE PASSWORD REQUIRE A FEW THIGS }}
+            pattern='^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,50}$'
+            required
+          />
+<label>
+      <input type='checkbox' checked='checked' name='remember' style='margin-bottom:15px'> Remember me
+    </label>
+
+    <p>By submitting information you agree to our terms found <a href='#'>here</a></p>
+
+  <div class='clearfix'>
+      <button type='button' class='cancelbtn'>Cancel</button>
+      <button type='submit' class='signupbtn'>Sign Up</button>
+    </div>
+  </div>
+
+</form>
