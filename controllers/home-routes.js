@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Game  } = require('../models');
+const { Game } = require('../models');
 
 // Get games to display on Home 
 router.get('/', async (req, res) => {
