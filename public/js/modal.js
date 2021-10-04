@@ -1,14 +1,15 @@
 // Get modal element
 var modal = document.getElementById('infoModal');
 //Get modal open button
-var modalBtn = document.getElementById('modalBtn');
+var loginModal = document.getElementById("loginModal");
 //Get close button
 var closeBtn = document.getElementById('closeBtn');
 
 //Listen for click to init on modal here
-modalBtn.addEventListener('click', openModal);
+loginModal.addEventListener("click", openModal);
 //Listen for close click
 closeBtn.addEventListener('click', closeModal);
+
 
 //Function to open modal
 function openModal() {
@@ -26,5 +27,17 @@ var form = document.getElementById('info');
 //Blocks button from reloading page and calls functions to occur
 submit.addEventListener('click', function (e) {
   e.preventDefault();
-  closeModal();
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  fetch('/api/users/login', {
+    method: 'POST',
+    headers: {
+      "Content-Type": 'application/json',
+    },
+    body: JSON.stringify( {
+      email, password
+    })
+  })
+  .then(res => closeModal())
+
 });
