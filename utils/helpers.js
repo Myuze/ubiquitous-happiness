@@ -12,4 +12,8 @@ module.exports = {
 
     return `<span for='img' aria-label='book'>${book}</span>`;
   },
+  if_first: (index) => {
+    console.log(index);
+    return (index === 0) ? true : false;
+  }
 };

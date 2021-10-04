@@ -1,3 +1,4 @@
+// Controls Hero Banner Navigation on Homepage
 const track = document.querySelector('.carousel__track');
 const slides = Array.from(track.children);
 const nextButton = document.querySelector('.carousel__button--right');
@@ -8,17 +9,19 @@ const dots = Array.from(dotsNav.children);
 const slideWidth = slides[0].getBoundingClientRect().width;
 
 // Arrange Banners Next to each other
-const setSlidePostition = (slide, index) => {
+const setSlidePosition = (slide, index) => {
   slide.style.left = slideWidth * index + 'px';
 };
 
-slides.forEach(setSlidePostition);
+slides.forEach(setSlidePosition);
 
 nextButton.addEventListener('click', e => {
-  const currentSlide = track.document.querySelector('.current-slide');
+  const currentSlide = track.querySelector('.current-slide');
   const nextSlide = currentSlide.nextElementSibling;
   const amountToMove = nextSlide.style.left;
 
   // Move to the next slide
-  track.style.transform = `translateX(${amountToMove}')`;
+  track.style.transform = `translateX(-${amountToMove})`;
+  currentSlide.classList.remove('current-slide');
+  nextSlide.classList.add('current-slide');
 });
