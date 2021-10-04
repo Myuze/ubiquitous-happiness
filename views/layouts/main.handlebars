@@ -43,7 +43,7 @@
       </ul>
     </nav>
   </header>
-    <main class="container container-fluid mt-5">
+    <main class="container-fluid p-0">
         {{! other rendered handlebars will appear here in body}}
         {{{ body }}}
     </main>
@@ -165,7 +165,7 @@
             name='password'
             minlength='8'
             maxlength='50'
-            {{! THIS MAKES THE PASSWORD REQUIRE A FEW THIGS }}
+            {{! THIS MAKES THE PASSWORD REQUIRE A FEW THINGS }}
             pattern='^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,50}$'
             required
           /><br />
@@ -178,10 +178,7 @@
       </div>
     </div>
   </div>
-
-
 {{else}}
-
   <h1>Hol' up yo!</h1>
 {{/unless}}
 

@@ -61,7 +61,7 @@ li {
 /* Home Page Banner CSS */
 .carousel {
     position: relative;
-    height: 600px;
+    height: 700px;
     width: 100%;
     margin: 0 auto;
 }
@@ -74,14 +74,12 @@ li {
 
 .carousel__track-container {
     position: relative;
-    background: var(--def-clr-dark);
     height: 100%;
     padding: 0px;
     overflow: hidden;
 }
 
 .carousel__track-container h1 {
-    color: var(--def-clr-light);
     position: absolute;
     bottom: 0;
     right: 0;
@@ -114,22 +112,28 @@ li {
     position: absolute;
     border: 0;
     top: 50%;
-    height: 200px;
+    height: 100%;
     cursor: pointer;
-    background: red;
     transform: translateY(-50%);
 }
 
 .carousel__button--left {
-    left: -40px;
+    background: transparent;
+    position: absolute;
+    width: 20%;
+    left: 0;
 }
 
 .carousel__button--right {
-    right: -40px;
+    background: transparent;
+    position: absolute;
+    width: 20%;
+    right: 0;
 }
 
-.carousel__button img {
-    width: 12px;
+.carousel li {
+    padding: 0;
+    margin: 0;
 }
 
 .carousel__nav {
@@ -139,10 +143,10 @@ li {
 }
 
 .carousel__indicator {
-    margin: 0 12px;
+    margin: 0 0.2rem;
     border: 0;
-    border-radius: 50%;
-    width: 20px;
+    border-radius: 15%;
+    width: 40px;
     height: 20px;
     background: rgba(0,0,0,.3);
     cursor: pointer;
@@ -150,8 +154,4 @@ li {
 
 .carousel__indicator.current-slide {
     background: rgba(0,0,0,.75);
-}
-
-.is-hidden {
-    display: none;
 }

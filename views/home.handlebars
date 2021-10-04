@@ -1,9 +1,6 @@
 {{!-- // Home page carousel and game banners --}}
 
-<section class="carousel">
-  <button class="carousel__button carousel__button--left is-hidden">
-    {{!-- <img src="" alt="" srcset=""> --}}
-  </button>
+<section class="carousel mb-5">
   <div class="carousel__track-container">
     <ul class="carousel__track">
       {{#each games as |game|}}
@@ -11,12 +8,11 @@
       {{/each}}
     </ul>
   </div>
-  <button class="carousel__button carousel__button--right">
-    {{!-- <img src="" alt="" srcset=""> --}}
-  </button>
   <div class="carousel__nav">
     {{#each games as |game|}}
     {{> home-button-nav }}
     {{/each}}
   </div>
+  <button class="carousel__button carousel__button--left"></button>
+  <button class="carousel__button carousel__button--right"></button>
 </section>
