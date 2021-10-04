@@ -5,7 +5,12 @@ const withAuth = require('../../utils/auth');
 
 //gets all forum posts
 router.get('/', async (req, res) => {
+<<<<<<< HEAD
   const { user } = req.session;
+=======
+  console.log(req.session);
+    const { user } = req.session;
+>>>>>>> dc913c030b2c090160df0c65d3f4ae656988859b
 
   if (user){
   const forumData = await Post.findAll({
@@ -33,9 +38,25 @@ router.get('/', async (req, res) => {
       res.json(err);
     });
 
+<<<<<<< HEAD
     const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
 
     res.render('forum', { forumPosts });
+=======
+      const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
+    res
+    .status(200)
+    .render('forum', { forumPosts });
+  }
+    else if(!user){
+      const forumData = await Post.findAll(
+      ).catch((err) => { 
+        res.json(err);
+      });
+        const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
+      console.log(forumPosts);
+      res.render('forum', { forumPosts });
+>>>>>>> dc913c030b2c090160df0c65d3f4ae656988859b
     }
 });
 
@@ -71,6 +92,10 @@ router.get('/:id', async (req, res) => {
 
     const serialized = forumPost.get({ plain: true });
 
+<<<<<<< HEAD
+=======
+    const serialized = forumPost.get({ plain: true });
+>>>>>>> dc913c030b2c090160df0c65d3f4ae656988859b
     res.render('forum-post', serialized);
   }
 });

@@ -9,19 +9,18 @@
     <div class='modalContent'>
       <div class='modalHeader'>
         <span id='closeBtn'>&#x2718;</span>
-        <h2>Registration</h2>
+        <h2>Login</h2>
       </div>
       <div class='modalBody'>
         <form action='/api/users/login' method='post' id='info'>
-          <label for='email'>What is your email?</label><br />
+          <label for='email'>Please enter your email.</label><br />
           <input
             type='email'
             id='email'
             name='email'
             value='Supergoodgamer@email.com'
           /><br />
-          <label for='password'>What would you like to make your password?(MIN
-            RQS HERE)</label><br />
+          <label for='password'>Please enter your password</label><br />
           <input
             type='password'
             id='password'
@@ -42,7 +41,6 @@
     </div>
   </div>
 
-  <script src='/js/modal.js'></script>
 
 {{else}}
 
