@@ -1,2 +1,5 @@
 node_modules
+root.session.sql
 .env
+.husky
+.vscode

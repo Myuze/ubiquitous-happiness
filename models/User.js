@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection');
 
 class User extends Model {
   checkPass(password) {
@@ -44,6 +44,27 @@ User.init(
     bio: {
       type: DataTypes.TEXT,
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      isEmail: true
+    },
+    game_category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'game_category',
+        key: 'id'
+      }
+    },
+    game_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'game',
+        key: 'id'
+      }
+    }
+
   },
   {
     hooks: {
@@ -56,7 +77,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: 'user',
   }
 );
 

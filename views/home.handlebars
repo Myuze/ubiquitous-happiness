@@ -1,4 +1,11 @@
-{{!-- TODO: Add Home Page --}}
-<section>
-    <h3>This is HOME</h3>
+{{!-- // Home page carousel and game banners --}}
+{{#each games as |game|}}
+<section class="game-banner">
+    <a href="/banner/{{id}}">
+      <div class="game-header">
+        <h4>{{game_name}}</h4>
+      </div>
+    </a>
+  <img class="game-img" src="{{game_image_URL}}">
 </section>
+{{/each}}

@@ -1,25 +1,29 @@
 {
-  "name": "tech-blog-fm",
+  "name": "ubiquitous-happiness",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon server.js",
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seed": "node seeds/seed.js",
+    "lint": "npx eslint **/*.js --quiet && exit 0",
+    "lint-fix": "npx eslint **/*.js --fix && exit 0",
+    "lint-verbose": "npx eslint **/*.js",
+    "test": "npm run lint",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Myuze/tech-blog-fm.git"
+    "url": "git+https://github.com/Myuze/ubiquitous-happiness.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Myuze/tech-blog-fm/issues"
+    "url": "https://github.com/Myuze/ubiquitous-happiness/issues"
   },
-  "homepage": "https://github.com/Myuze/tech-blog-fm#readme",
+  "homepage": "https://github.com/Myuze/ubiquitous-happiness#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
@@ -27,10 +31,13 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
+    "mdb-ui-kit": "^3.9.0",
     "mysql2": "^2.3.0",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "husky": "^7.0.0",
     "nodemon": "^2.0.13"
   }
 }
