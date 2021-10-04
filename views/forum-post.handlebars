@@ -1,14 +1,13 @@
-{{!-- {{log 'this' forumPosts}} --}}
 <class class="container">
     <section class="header">
-        <h1 class="forum-title">{{forumPosts.title}}</h1>
-        <a href="/profile/{{forumPosts.author_id}}">
-            <h3 class="author-id">{{forumPosts.author}}</h3>
+        <h1 class="forum-title">{{title}}</h1>
+        <a href="/profile/{{author_id}}">
+            <h3 class="author-id">{{author}}</h3>
         </a>
     </section>
 
     <section class="entry">
-        <p class="forum-entry">{{forumPosts.entry}}</p>
+        <p class="forum-entry">{{entry}}</p>
     </section>
 
     <section class="comments">
@@ -16,7 +15,7 @@
     </section>
 </class>
 
-<a href="/forum/new-post">
+<a href="/user/newPost">
     <button class="create-new-post">Add Post</button>
 </a>
 <a href="/forum">
