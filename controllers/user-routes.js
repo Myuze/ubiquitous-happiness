@@ -9,22 +9,13 @@ router.get('/login', async (req, res) => {
       if (user) {
          res
           .status(200)
-<<<<<<< HEAD
-          .render('login', { mesasage: 'you are already logged in', user });
-=======
           .render('login', { mesasage: 'you are already logged in', user }); 
->>>>>>> dc913c030b2c090160df0c65d3f4ae656988859b
       }
 
       if(!user){
           res
-<<<<<<< HEAD
-          .status(200)
-          .render('login')
-=======
           .status(400)
           .render('login');
->>>>>>> dc913c030b2c090160df0c65d3f4ae656988859b
       }
   } catch (err) {
     console.log(err);

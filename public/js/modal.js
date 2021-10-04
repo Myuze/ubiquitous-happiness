@@ -1,25 +1,15 @@
 // Get modal element
 var modal = document.getElementById('infoModal');
 //Get modal open button
-<<<<<<< HEAD
-var modalBtn = document.getElementById('modalBtn');
-=======
 var loginModal = document.getElementById("loginModal");
->>>>>>> dc913c030b2c090160df0c65d3f4ae656988859b
 //Get close button
 var closeBtn = document.getElementById('closeBtn');
 
 //Listen for click to init on modal here
-<<<<<<< HEAD
-modalBtn.addEventListener('click', openModal);
-//Listen for close click
-closeBtn.addEventListener('click', closeModal);
-=======
 loginModal.addEventListener("click", openModal);
 //Listen for close click
 closeBtn.addEventListener('click', closeModal);
 
->>>>>>> dc913c030b2c090160df0c65d3f4ae656988859b
 
 //Function to open modal
 function openModal() {
