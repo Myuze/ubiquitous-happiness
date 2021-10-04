@@ -2,7 +2,7 @@
 
 <section class="carousel">
   <button class="carousel__button carousel__button--left">
-    <img src="" alt="" srcset="">
+    {{!-- <img src="" alt="" srcset=""> --}}
   </button>
   <div class="carousel__track-container">
     <ul class="carousel__track">
@@ -12,11 +12,11 @@
     </ul>
   </div>
   <button class="carousel__button carousel__button--right">
-    <img src="" alt="" srcset="">
+    {{!-- <img src="" alt="" srcset=""> --}}
   </button>
   <div class="carousel__nav">
-    <button class="carousel__indicator current-slide"></button>
-    <button class="carousel__indicator"></button>
-    <button class="carousel__indicator"></button>
+    {{#each games as |game|}}
+    {{> home-button-nav }}
+    {{/each}}
   </div>
 </section>
