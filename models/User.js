@@ -49,7 +49,22 @@ User.init(
       allowNull: false,
       unique: true,
       isEmail: true
+    },
+    game_category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'game_category',
+        key: 'id'
+      }
+    },
+    game_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'game',
+        key: 'id'
+      }
     }
+
   },
   {
     hooks: {
