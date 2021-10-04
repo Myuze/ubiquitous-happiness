@@ -1,15 +1,3 @@
-{{!-- // Home page carousel and game banners
-{{#each games as |game|}}
-<section class="carousel">
-    <a href="/banner/{{id}}">
-      <div class="game-header">
-        <h4>{{game_name}}</h4>
-      </div>
-    </a>
-  <img class="game-img" src="{{game_image_URL}}">
-</section>
-{{/each}} --}}
-
 {{!-- // Home page carousel and game banners --}}
 
 <section class="carousel">
@@ -19,9 +7,7 @@
   <div class="carousel__track-container">
     <ul class="carousel__track">
       {{#each games as |game|}}
-      <li class="carousel__slide">
-        <img class="carousel__image" src="{{game_image_URL}}" alt="{{game_name}}">
-      </li>
+      {{> home-banner }}
       {{/each}}
     </ul>
   </div>

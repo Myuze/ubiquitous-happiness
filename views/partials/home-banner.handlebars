@@ -1,0 +1,10 @@
+<li class="carousel__slide">
+  <h1>{{game_name}}</h1>
+  {{#if index0}}
+  <img class="carousel__image current-slide" src="{{game_image_URL}}" alt="{{game_name}}">
+  <h3>CURRENT SLIDE</h3>
+  {{else}}
+  <img class="carousel__image" src="{{game_image_URL}}" alt="{{game_name}}">
+  {{/if}}
+  <h3>{{@index}}</h3>
+</li>

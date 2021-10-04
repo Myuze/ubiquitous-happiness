@@ -79,6 +79,20 @@ li {
     padding: 10px;
 }
 
+.carousel__track-container h1 {
+    color: var(--def-clr-light);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.carousel__track-container h3 {
+    color: var(--def-clr-light);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .carousel__track {
     padding: 0;
     margin: 0;
