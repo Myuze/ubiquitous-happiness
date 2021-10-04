@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const { User , Post } = require('../../models');
-const withAuth = require('../../utils/auth')
+const withAuth = require('../../utils/auth');
 //all forum routes in the api have been updated  as of 10/2/2021 @ 12:51pm
 
 //gets all forum posts
 router.get('/', async (req, res) => {
-  console.log(req.session)
-    const { user } = req.session
+  console.log(req.session);
+    const { user } = req.session;
 
     if (user){
     const forumData = await Post.findAll({
@@ -66,12 +66,12 @@ router.get('/:id', async (req, res) => {
       res.json(err);
     });
 
-    const serialized = forumPost.get({ plain: true })
+    const serialized = forumPost.get({ plain: true });
     res.render('forum-post', serialized);
   }});
 
 router.post('/', withAuth, (req, res) => {
-  const { user } = req.session
+  const { user } = req.session;
 
   if (user){
 
@@ -89,7 +89,7 @@ router.post('/', withAuth, (req, res) => {
   else if (!user){
     res
     .status(400)
-    .render('login', { message: 'please login to make a new post'})
+    .render('login', { message: 'please login to make a new post'});
   }
 });
 

@@ -3,19 +3,19 @@ const { User, Post } = require('../models');
 
 //login view
 router.get('/login', async (req, res) => {
-  const { user } = req.session
+  const { user } = req.session;
   
   try {
       if (user) {
          res
           .status(200)
-          .render('login', { mesasage: 'you are already logged in', user }) 
+          .render('login', { mesasage: 'you are already logged in', user }); 
       }
 
       if(!user){
           res
           .status(400)
-          .render('login')
+          .render('login');
       }
   } catch (err) {
     console.log(err);
@@ -24,19 +24,19 @@ router.get('/login', async (req, res) => {
 });
 //registration view
 router.get('/register', async (req, res) => {
-  const { user } = req.session
+  const { user } = req.session;
   
   try {
       if (user) {
          res
           .status(200)
-          .render('register', { mesasage: 'you are already registered', user }) 
+          .render('register', { mesasage: 'you are already registered', user }); 
       }
 
       if(!user){
           res
           .status(400)
-          .render('register')
+          .render('register');
       }
   } catch (err) {
     console.log(err);
@@ -46,7 +46,7 @@ router.get('/register', async (req, res) => {
 
 //new-post view get request to render new-post.handlebars
 router.get('/newPost', async (req, res) => {
-    const { user } = req.session
+    const { user } = req.session;
     
     try {
         if (user) {
@@ -89,4 +89,4 @@ router.post('/newPost', async (req, res) => {
   }
 })
 
-module.exports = router
+module.exports = router;

@@ -1,19 +1,21 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { Game } = require('../models');
 
+// Get games to display on Home 
 router.get('/', async (req, res) => {
-  try {
-    const dbUserData = await User.findAll();
-    
-    req.session.save(() => {
-      req.session.loggedIn = true;
-
-      res.status(200).render('home', { dbUserData });
-    });
-  } catch (err) {
-    console.log(err);
-      res.status(500).json(err);
-  }
+  const gameData = await Game.findAll()
+  .catch((err) => { 
+    res
+      .status(500)
+      .json(err)
+      .render('404');
+  });
+  
+  const games = gameData.map((game) => game.get({ plain: true }));
+  
+  res
+    .status(200)
+    .render('home', { games });
 });
 
 module.exports = router;
