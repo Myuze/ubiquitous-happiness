@@ -30,14 +30,14 @@ router.get('/:id', async (req, res) => {
   const { user } = req.session;
 
   // if (user){
-    const findUser = await User.findOne({
-      where: {
-          id: req.params.id,
-          include: {
-            model: 'User',
-            attributes: [ 'id', 'username' ]
-          }
-      }
+  const findUser = await User.findOne({
+    where: {
+        id: req.params.id,
+        include: {
+          model: 'User',
+          attributes: [ 'id', 'username' ]
+        }
+    }
   }).catch((err) => { 
     res.json(err);
   });
