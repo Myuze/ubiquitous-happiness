@@ -38,6 +38,6 @@ submit.addEventListener('click', function (e) {
       email, password
     })
   })
-  .then(res => closeModal())
+  .then(res => closeModal());
 
 });

@@ -1,4 +1,18 @@
-{{!-- TODO: Add Home Page --}}
-<section>
-    <h3>This is HOME</h3>
+{{!-- // Home page carousel and game banners --}}
+
+<section class="carousel mb-5">
+  <div class="carousel__track-container">
+    <ul class="carousel__track">
+      {{#each games as |game|}}
+      {{> home-banner }}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="carousel__nav">
+    {{#each games as |game|}}
+    {{> home-button-nav }}
+    {{/each}}
+  </div>
+  <button class="carousel__button carousel__button--left"></button>
+  <button class="carousel__button carousel__button--right"></button>
 </section>

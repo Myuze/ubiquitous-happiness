@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Game extends Model {}
+class GameCategory extends Model {}
 
-Game.init(
+GameCategory.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,22 +11,9 @@ Game.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    game_name: {
+    game_category_name: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    game_image_URL: {
-      type: DataTypes.STRING
-    },
-    game_video_URL: {
-      type: DataTypes.STRING
-    },
-    game_category_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'game_category',
-        key: 'id'
-      }
     }
   },
   {
@@ -34,8 +21,8 @@ Game.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'game',
+    modelName: 'game_category',
   }
 );
 
-module.exports = Game;
+module.exports = GameCategory;
