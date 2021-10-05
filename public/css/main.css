@@ -7,7 +7,7 @@
 .ubMainLink {
     font-family: 'Permanent Marker', cursive;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 15px;
 }
 
 :hover.ubMainLink{
@@ -17,7 +17,6 @@
 li {
     display: inline;
     padding-right: 10px;
-    margin-right: 20px;
 }
 
 .light {
@@ -33,11 +32,11 @@ li {
 }
 
 .logo-image {
-    width: 25%;
+    width: 15%;
 }
 
 .main-nav {
-    margin: 0 25px 15px 0;
+    margin: 0 25px 10px 0;
 }
 
 
@@ -46,21 +45,54 @@ li {
 }
 
 .text-uppercase {
-    font-size:24px;
+    font-size:18px;
     text-align: center;
     font-family: 'Permanent Marker', cursive;
+    color: limegreen;
 }
 .logo-footer {
-    width: 75%;
-    margin-left: 
+    width: 40%;
+    margin-left: 120px;
 }
-
+.me-5 {
+    font-family: monospace;
+}
+.mt-3 {
+    align-items: flex-start;
+}
 .mb-4 {
     margin-top: -2%;
 }
-
+h6 {
+    border: solid 3px white;
+}
 p {
     text-align: center;
-    font-size: larger;
-    font-family: 'Permanent Marker', cursive;
+    font-family: monospace;
+    margin-top: -5%;
 }
+
+
+
+@media (max-width: 1199px) {
+
+    }
+  }
+  
+@media (max-width: 991px) {
+    li {
+    font-size:16px;
+}
+}
+  
+@media (max-width: 767px) {
+    li {
+        font-size:16px;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    li {
+        font-size:16px;
+    }
+  }
