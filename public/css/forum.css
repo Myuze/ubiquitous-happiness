@@ -1,0 +1,63 @@
+.forum {
+    display: inline-flex;
+}
+
+h3 {
+    font-size:54px;
+    margin-top: 40px;
+    font-family: 'permanent marker';
+    color:lime;
+}
+
+.blog-post-image {
+    height: 250px;
+    border: white solid thin;
+}
+
+.card {
+    width: 25%;
+    background: linear-gradient(45deg, dimgrey, transparent);
+    border: solid white thick;
+}
+
+.card-title {
+    margin-top: 0.5rem;
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.card-text {
+    font-size: 14px;
+    margin: 5% 0 5% 0;
+    color: white;
+}
+
+.card-body {
+    width: 100%;
+}
+
+.read-more-btn {
+    background: black;
+    font-family: 'permanent marker';
+    color: darkkhaki;
+}
+
+.forum {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.btn {
+    font-family: 'Permanent Marker';
+    color: darkkhaki;
+    font-size: 22px;
+    background: linear-gradient(360deg, dimgrey, transparent);
+    margin-top: 35px;
+    border: solid white thick;
+}
+
+a {
+    text-decoration-color: darkkhaki;
+}
