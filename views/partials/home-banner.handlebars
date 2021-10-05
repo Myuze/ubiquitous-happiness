@@ -1,0 +1,10 @@
+{{#if (if_first @index)}}
+<li class="carousel__slide current-slide">
+{{else}}
+<li class="carousel__slide">
+{{/if}}
+  <a href="{{game_video_URL}}">
+    <h1>{{game_name}}</h1>
+    <img class="carousel__image" src="{{game_image_URL}}" alt="{{game_name}}">
+  </a>
+</li>
