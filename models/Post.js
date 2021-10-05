@@ -36,6 +36,10 @@ Post.init(
     },
     author: {
       type: DataTypes.STRING
+    },
+    comments: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false,
     }
   },
   {

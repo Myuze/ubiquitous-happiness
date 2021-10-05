@@ -41,23 +41,23 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const { user } = req.session;
 
-    if (user){
-      const  forumPost = await Post.findOne({
-        where: {
-            id: req.params.id,
-            include: {
-              model: 'User',
-              attributes: [ 'id', 'username' ]
-            }
-        }
-    }).catch((err) => { 
-      res.json(err);
-    });
+    // if (user){
+    //   const  forumPost = await Post.findOne({
+    //     where: {
+    //         id: req.params.id,
+    //         include: {
+    //           model: 'User',
+    //           attributes: [ 'id', 'username' ]
+    //         }
+    //     }
+    // }).catch((err) => { 
+    //   res.json(err);
+    // });
 
-    res.render('forum-post', { forumPost } );
-    }
+    // res.render('forum-post', { forumPost } );
+    // }
 
-    else if (!user){
+    // else if (!user){
     const  forumPost = await Post.findOne({
         where: {
             id: req.params.id
@@ -68,7 +68,8 @@ router.get('/:id', async (req, res) => {
 
     const serialized = forumPost.get({ plain: true });
     res.render('forum-post', serialized);
-  }});
+  // }
+});
 
 router.post('/', withAuth, (req, res) => {
   const { user } = req.session;

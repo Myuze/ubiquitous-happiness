@@ -5,6 +5,7 @@ const Game = require('./Game');
 const GameCategory = require('./GameCategory');
 const UserGame = require('./UserGame');
 const UserCategory = require('./UserCategory');
+// const Comment = require('./Comment');
 
 // Forum Post Relationships
 User.hasMany(Post, {
@@ -25,6 +26,22 @@ Data.belongsTo(User, {
     foreignKey: 'data_id',
     onDelete: 'CASCADE'
 });
+
+// Forum Comments Relationships
+
+// User.hasMany(Comment, {
+//     foreignKey: 'author_id',
+//     onDelete: 'CASCADE'
+// })
+
+// Comment.belongsTo(User, {
+//     foreignKey: 'author_id',
+//     onDelete: 'CASCADE'
+// })
+
+// Post.hasMany(Comment)
+
+// Comment.belongsTo(Post)
 
 // Game Category Relationships
 User.belongsToMany(Game, {
