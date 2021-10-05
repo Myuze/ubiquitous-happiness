@@ -34,12 +34,12 @@ Post.init(
         key: 'id',
       },
     },
-    author: {
-      type: DataTypes.STRING
-    },
-    comments: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false,
+    username: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'user',
+        key: 'username'
+      }
     }
   },
   {
