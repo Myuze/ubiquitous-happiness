@@ -38,9 +38,11 @@ li {
 .main-nav {
     margin: 0 25px 10px 0;
 }
-
+mt-5 {
+    margin-top:1rem!;
+}
 body {
-    background-color:#212529;
+    background-color:black;
 }
 
 .footer {
@@ -83,8 +85,7 @@ p {
   }
   
 @media (max-width: 991px) {
-    li {
-    font-size:16px;
+    max
 }
 }
   
