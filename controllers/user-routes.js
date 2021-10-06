@@ -75,8 +75,7 @@ router.post('/newPost', async (req, res) => {
       res
         .status(400)
         .redirect('/login', {message: 'please login to make a new post'})
-    }
-    if (!user){
+    } else {
       const dbPostData = await Post.create({
         title: req.body.title,
         entry: req.body.entry
