@@ -14,19 +14,23 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/:id', withAuth, async (req, res) => {
   try {
-    const dbGameData = await Game.findByPk({
+    const dbGameData = await Game.findOne({
       where: {
-        id: req.params.id,
-      },
+        id: req.params.id
+      }
     });
 
-    res.status(200).json;
+    if (!dbGameData) {
+      res.json({ message: 'No Game found with this id!'});
+    }
+
+    res.status(200).json(dbGameData);
   } catch (err) {
-    res.status(500).render('404');
+    res.status(500).json(err);
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const dbGameData = await Game.create(req.body);
 
@@ -39,7 +43,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const dbGameData = await Game.destroy({
       where: {
