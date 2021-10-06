@@ -26,3 +26,4 @@ async function newCommentHandler(event) {
   document
     .querySelector('.new-comment')
     .addEventListener('submit', newCommentHandler);
+    
