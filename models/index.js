@@ -29,28 +29,28 @@ Data.belongsTo(User, {
 
 // Forum Comments Relationships
 
-User.hasMany(Comment, {
+User.belongsToMany(Comment, {
     through: {
       model: Post,
       unique: false
     }
 })
 
-Comment.belongsTo(User, {
+Comment.belongsToMany(User, {
     through: {
       model: Post,
       unique: false
     }
 })
 
-Post.hasMany(Comment, {
+Post.belongsToMany(Comment, {
     through: {
       model: User,
       unique: false
     }
 })
 
-Comment.belongsTo(Post, {
+Comment.belongsToMany(Post, {
     through: {
       model: User,
       unique: false

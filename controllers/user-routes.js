@@ -22,6 +22,7 @@ router.get('/login', async (req, res) => {
       res.status(500).json(err);
   }
 });
+
 //registration view
 router.get('/register', async (req, res) => {
   const { user } = req.session;
