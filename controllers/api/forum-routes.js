@@ -75,13 +75,13 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   const user = req.session;
   try {
-    if (!user){
+    if (!user.loggedIn){
       res
         .status(400)
         .redirect('/login', {message: 'please login to make a new post'});
     }
 
-    if (user){
+    else {
       const dbPostData = await Post.create({
         title: req.body.title,
         entry: req.body.content,

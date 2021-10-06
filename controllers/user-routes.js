@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post } = require('../models');
+const withAuth = require('../utils/auth');
 
 //login view
 router.get('/login', async (req, res) => {
@@ -35,7 +36,7 @@ router.get('/register', async (req, res) => {
 
       if(!user){
           res
-          .status(400)
+          .status(200)
           .render('register');
       }
   } catch (err) {
@@ -45,20 +46,20 @@ router.get('/register', async (req, res) => {
 });
 
 //new-post view get request to render new-post.handlebars
-router.get('/newPost', async (req, res) => {
+router.get('/newPost', withAuth, async (req, res) => {
     const { user } = req.session;
     
     try {
         if (user) {
            res
             .status(200)
-            .render('new-post', { user }); 
+            .render('forum-post', { user }); 
         }
 
         if(!user){
             res
-            .status(400)
-            .render('new-post', { message: 'Please login or register to make a new post.'});
+            .status(200)
+            .render('forum-post', { message: 'Please login or register to make a new post.'});
         }
     } catch (err) {
       console.log(err);
@@ -66,5 +67,38 @@ router.get('/newPost', async (req, res) => {
     }
   });
 
+  router.get('/profile/:id', withAuth, async (req, res) => {
+    console.log(req.body)
+    const  user  = req.session
+    if (user) {
+      try{
+        console.log('user used')
+        const userProfile = await User.findOne({
+          attributes: {exclude: 'password'},
+          where: {
+            id: req.params.id,
+          },
+
+        })
+
+        const serialized = userProfile.get({ plain: true })
+        res
+          .status(200)
+          .render('profile', serialized)
+      } 
+      
+      catch (err) {
+        console.error(err)
+      }
+    } else if (!user) {
+      res
+        .status(200)
+        .render('profile', {message: 'you are not logged in'})
+    }
+  })
+
+  router.get('leaderboard', async (req, res) => {
+    
+  })
 
 module.exports = router;
