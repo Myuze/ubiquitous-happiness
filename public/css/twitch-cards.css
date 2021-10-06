@@ -24,3 +24,7 @@
 .t__carousel {
     height: 500px;
 }
+
+.card-text {
+    background-color: none;
+}
