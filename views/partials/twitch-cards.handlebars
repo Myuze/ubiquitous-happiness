@@ -17,13 +17,6 @@
                         <p class="game-name">Game Name</p>
                     </div>
                 </div>
-                <div class="card card-body">
-                    <img class="img-fluid" src="/images/logo.png" alt="game-play image">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="player-name">PLayer name</h5>
-                        <p class="game-name">Game Name</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -33,17 +26,16 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="active carousel__indicator" aria-label="Slide 4"></button>
 </div>
 
-
-
-
-                    {{#each streams as |stream|}}
+                    {{!-- {{#each streams as |stream|}}
+                    {{#each stream as |single-stream|}}
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img" src="{{ stream.game-image }}" alt="game-play image">
+                            <img class="img" src="{{ single-stream.game-image }}" alt="game-play image">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5 class="player-name">{{ stream.player-name }}</h5>
-                                <p class="game-name"> {{ stream.game-name }}</p>
+                                <h5 class="player-name">{{ single-stream.player-name }}</h5>
+                                <p class="game-name"> {{ single-stream.game-name }}</p>
                             </div>
                         </div>
                     </div>
                     {{/each}}
+                    {{/each}} --}}

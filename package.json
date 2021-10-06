@@ -33,6 +33,7 @@
     "express-session": "^1.17.2",
     "mdb-ui-kit": "^3.9.0",
     "mysql2": "^2.3.0",
+    "node-fetch": "^3.0.0",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
