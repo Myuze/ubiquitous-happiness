@@ -27,13 +27,6 @@ Comment.init(
         key: 'id',
       },
     },
-    username: {
-      type: DataTypes.STRING,
-      references: {
-          model: 'user',
-          key: 'username'
-      }
-    },
     forum_id: {
       type: DataTypes.INTEGER,
       references: {

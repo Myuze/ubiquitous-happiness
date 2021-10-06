@@ -9,15 +9,24 @@
     <section class="entry">
         <p class="forum-entry">{{entry}}</p>
     </section>
-
-    <section class="comments">
-    {{> comments}}
-    </section>
 </class>
+
+<form class='new-comment'>
+    <label for='comment'>Comment</label>
+    <textarea id='comment' name='comment' rows='1' cols='30'></textarea>
+    <button type='submit' value='Submit'>Submit</button>
+</form>
+
+<div class="comments-container">
+    {{> comments }}
+</div>
 
 <a href="/user/newPost">
     <button class="create-new-post">Add Post</button>
 </a>
+
 <a href="/forum">
     <button class="back-button">Back</button>
 </a>
+
+<script src="/js/new-comment.js"></script>

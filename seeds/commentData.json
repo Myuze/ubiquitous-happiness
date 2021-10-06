@@ -1,18 +1,22 @@
 [
     {
         "comment_entry": "this shit fire",
-        "author": "Florian Meneses"
+        "author_id": 1,
+        "forum_id": 1
     },
     {
         "comment_entry": "Florian I'm thankful to you but also mad",
-        "author": "Amiko"
+        "author_id": 2,
+        "forum_id": 1
     },
     {
         "comment_entry": "cannot believe I never knew about the stupid F12 function",
-        "author": "Amiko"
+        "author_id": 3,
+        "forum_id": 1
     },
     {
         "comment_entry": "seriously like wtf",
-        "author": "Lernantino"
+        "author_id": 4,
+        "forum_id": 1
     }
 ]

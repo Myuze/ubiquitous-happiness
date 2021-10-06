@@ -29,32 +29,20 @@ Data.belongsTo(User, {
 
 // Forum Comments Relationships
 
-User.belongsToMany(Comment, {
-    through: {
-      model: Post,
-      unique: false
-    }
+User.hasMany(Comment, {
+  foreignKey: 'author_id',
 })
 
-Comment.belongsToMany(User, {
-    through: {
-      model: Post,
-      unique: false
-    }
+Comment.belongsTo(User, {
+  foreignKey: 'author_id',
 })
 
-Post.belongsToMany(Comment, {
-    through: {
-      model: User,
-      unique: false
-    }
+Post.hasMany(Comment, {
+  foreignKey: 'forum_id'
 })
 
-Comment.belongsToMany(Post, {
-    through: {
-      model: User,
-      unique: false
-    }
+Comment.belongsTo(Post, {
+  foreignKey: 'forum_id'
 })
 
 // Game Category Relationships

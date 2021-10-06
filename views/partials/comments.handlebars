@@ -1,9 +1,5 @@
-<class class="comment-container">
-    <section class="header">
-        <h3 class="author-id">sniff sniff</h3>
-    </section>
-
-    <section class="comment">
-        <p class="comment-entry">this is confoosing</p>
-    </section>
-</class>
+{{#each comments as |comment|}}
+<section class="comment-card">
+    <h6 class="user">{{comment_entry}}</h6>
+</section>
+{{/each}}
