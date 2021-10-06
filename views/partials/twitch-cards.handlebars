@@ -1,18 +1,10 @@
 <section class="twitch-carousel-container text-center">
     <h2 class="font-weight-light">TRENDING STREAMS</h2>
-    <div id="twitchCarousel" class="carousel slide w-100 h-350" data-ride="t_carousel">
-        <a class="carousel-control-prev" href="#twitchCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle"></span>
-            <span class="sr-only"></span>
-        </a>
-        <a class="carousel-control-next" href="#twitchCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-            <span class="sr-only"></span>
-        </a>
+    <div id="twitchCarousel" class="t__carousel slide w-100" data-ride="t_carousel">
         <div class="t_carousel-inner w-100" role="listbox">
             <div class="d-flex carousel-item active twitch-card">
                 <div class="card card-body">
-                    <img class="img" src="/images/logo.png" alt="game-play image">
+                    <img class="img-fluid" src="/images/logo.png" alt="game-play image">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="player-name">PLayer name</h5>
                         <p class="game-name">Game Name</p>
@@ -35,18 +27,23 @@
             </div>
         </div>
     </div>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active carousel__indicator" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"  class="active carousel__indicator" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"  class="active carousel__indicator" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="active carousel__indicator" aria-label="Slide 4"></button>
 </div>
 
 
-{{!-- 
+
+
                     {{#each streams as |stream|}}
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="{{ stream.game-image }}" alt="game-play image">
+                            <img class="img" src="{{ stream.game-image }}" alt="game-play image">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5 class="player-name">{{ stream.player-name }}</h5>
                                 <p class="game-name"> {{ stream.game-name }}</p>
                             </div>
                         </div>
                     </div>
-                    {{/each}} 
+                    {{/each}}

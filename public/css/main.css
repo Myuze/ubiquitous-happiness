@@ -66,6 +66,11 @@ body {
     font-family: 'Permanent Marker', cursive;
     color: limegreen;
 }
+
+.img-fluid {
+    height: 450px;
+    opacity: 0.4;
+}
 .logo-footer {
     width: 40%;
     margin-left: 120px;
@@ -79,6 +84,7 @@ body {
 .mb-4 {
     margin-top: -2%;
 }
+
 h6 {
     border: solid 3px white;
 }
@@ -86,31 +92,9 @@ p {
     text-align: center;
     font-family: monospace;
     margin-top: -5%;
+    background-color: black;
+    font-size: 18px;
 }
-
-
-
-@media (max-width: 1199px) {
-
-    }
-  }
-  
-@media (max-width: 991px) {
-    max
-}
-}
-  
-@media (max-width: 767px) {
-    li {
-        font-size:16px;
-    }
-  }
-  
-  @media (max-width: 575px) {
-    li {
-        font-size:16px;
-    }
-  }
 
 /* Home Page Banner CSS */
 .carousel {
@@ -202,10 +186,11 @@ p {
     border-radius: 15%;
     width: 40px;
     height: 20px;
-    background: rgba(0,0,0,.3);
+    background: lime;
     cursor: pointer;
 }
 
 .carousel__indicator.current-slide {
     background: rgba(0,0,0,.75);
 }
+

@@ -1,3 +1,26 @@
 .img-fluid {
-    height: 350px;
+    height: 450px;
+}
+
+.font-weight-light {
+    margin-top: 10%;
+}
+
+.player-name {
+    font-family: 'Permanent Marker';
+    font-size: 32px;
+    color: lime;
+    background-color:black;
+}
+
+
+.font-weight-light {
+    margin-bottom: 30px;
+    font-family: 'permanent marker';
+    font-size:54px;
+    color: lime;
+}
+
+.t__carousel {
+    height: 500px;
 }
