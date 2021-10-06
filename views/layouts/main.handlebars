@@ -157,18 +157,17 @@
       <div class='modalBody'>
         {{!-- <form action='/api/users/login' method='post' id='info'> --}}
         <form id="info">
-          <label for='email'>What is your email?</label><br />
+          <label for='email'>Please enter your email</label><br />
           <input
             type='email'
-            id='email'
+            id='modalEmail'
             name='email'
             value='Supergoodgamer@email.com'
           /><br />
-          <label for='password'>What would you like to make your password?(MIN
-            RQS HERE)</label><br />
+          <label for='password'>Please enter your password</label><br />
           <input
             type='password'
-            id='password'
+            id='modalPassword'
             name='password'
             minlength='8'
             maxlength='50'
@@ -180,7 +179,7 @@
           <button type='submit' class='submitModal' id='submit'>
             LETS GO!
           </button>
-          <a href='/signup'>Wait, are you signed up? Cause you should be!</a>
+          <a href='/user/register'>Wait, are you signed up?</a>
         </form>
       </div>
     </div>
