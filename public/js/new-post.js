@@ -25,4 +25,3 @@ async function newFormHandler(event) {
   document
     .querySelector('.new-forum-post')
     .addEventListener('submit', newFormHandler);
-    
