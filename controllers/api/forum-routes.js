@@ -120,4 +120,3 @@ router.post('/', withAuth, (req, res) => {
 });
 
 module.exports = router;
-
