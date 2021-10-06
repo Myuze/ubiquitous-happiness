@@ -11,13 +11,24 @@ h3 {
 
 .blog-post-image {
     height: 250px;
+    width: 250px;
     border: white solid thin;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.forum-row-1, .forum-row-2, .forum-row-3 {
+    display: flex;
+    margin-top: 5%;
 }
 
 .card {
-    width: 25%;
+    width: 50%;
     background: linear-gradient(45deg, dimgrey, transparent);
     border: solid white thick;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom:20px;
+    flex-direction: row;
 }
 
 .card-title {

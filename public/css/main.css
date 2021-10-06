@@ -18,7 +18,7 @@ body {
 .ubMainLink {
     font-family: 'Permanent Marker', cursive;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 :hover.ubMainLink{
@@ -43,7 +43,7 @@ li {
 }
 
 .logo-image {
-    width: 15%;
+    width: 25%;
 }
 
 .main-nav {

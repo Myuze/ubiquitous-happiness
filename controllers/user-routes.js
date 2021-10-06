@@ -4,12 +4,11 @@ const { User, Post } = require('../models');
 //login view
 router.get('/login', async (req, res) => {
   const { user } = req.session;
-  
   try {
       if (user) {
          res
           .status(200)
-          .render('login', { mesasage: 'you are already logged in', user }); 
+          .render('login', { mesasage: 'you are already logged in', user });
       }
 
       if(!user){
@@ -25,12 +24,11 @@ router.get('/login', async (req, res) => {
 //registration view
 router.get('/register', async (req, res) => {
   const { user } = req.session;
-  
   try {
       if (user) {
          res
           .status(200)
-          .render('register', { mesasage: 'you are already registered', user }); 
+          .render('register', { mesasage: 'you are already registered', user });
       }
 
       if(!user){
@@ -47,12 +45,11 @@ router.get('/register', async (req, res) => {
 //new-post view get request to render new-post.handlebars
 router.get('/newPost', async (req, res) => {
     const { user } = req.session;
-    
     try {
         if (user) {
            res
             .status(200)
-            .render('new-post', { user }); 
+            .render('new-post', { user });
         }
 
         if(!user){

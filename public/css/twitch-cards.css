@@ -28,3 +28,12 @@
 .card-text {
     background-color: none;
 }
+
+.card-body {
+
+    height: 450px;
+}
+.img {
+    height: 425px;
+    width: -webkit-fill-available;
+}

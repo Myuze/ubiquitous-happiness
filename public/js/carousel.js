@@ -66,5 +66,5 @@ dotsNav.addEventListener('click', e => {
 
   // Move to the next slide by nav button selected
   moveToSlide(track, currentSlide, targetSlide);
-  updateDots(currentDot, targetDot);  
+  updateDots(currentDot, targetDot);
 });
