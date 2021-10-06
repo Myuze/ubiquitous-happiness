@@ -56,7 +56,7 @@ router.get('/newPost', withAuth, async (req, res) => {
             .render('forum-post', { user }); 
         }
 
-        if(!user){
+        else {
             res
             .status(200)
             .render('forum-post', { message: 'Please login or register to make a new post.'});
@@ -90,7 +90,7 @@ router.get('/newPost', withAuth, async (req, res) => {
       catch (err) {
         console.error(err)
       }
-    } else if (!user) {
+    } else {
       res
         .status(200)
         .render('profile', {message: 'you are not logged in'})
