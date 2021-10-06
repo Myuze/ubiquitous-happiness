@@ -10,9 +10,7 @@ router.get('/login', async (req, res) => {
          res
           .status(200)
           .render('login', { mesasage: 'you are already logged in', user }); 
-      }
-
-      if(!user){
+      } else {
           res
           .status(400)
           .render('login');
@@ -32,9 +30,7 @@ router.get('/register', async (req, res) => {
          res
           .status(200)
           .render('register', { mesasage: 'you are already registered', user }); 
-      }
-
-      if(!user){
+      } else {
           res
           .status(400)
           .render('register');
@@ -50,17 +46,16 @@ router.get('/newPost', async (req, res) => {
     const { user } = req.session;
     
     try {
-        if (user) {
-           res
-            .status(200)
-            .render('add-post') 
-        }
-
-        else if(!user){
+        if (!user) {
             res
             .status(200)
             .render('add-post', { message: 'Please login or register to make a new post.'})
-        }
+        } else {
+          res
+           .status(200)
+           .render('add-post') 
+       }
+
     } catch (err) {
       console.log(err);
         res.status(500).json(err);

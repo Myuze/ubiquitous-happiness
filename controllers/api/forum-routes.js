@@ -65,7 +65,28 @@ router.post('/', withAuth, (req, res) => {
 router.get('/:id', async (req, res) => {
     const { user } = req.session;
 
-    if (user){
+    if (!user) {
+      const  forumPost = await Post.findOne({
+          where: {
+              id: req.params.id,
+          },
+          include: {
+            model: Comment,
+            include: {
+              model: User,
+              attributes: [ 'id', 'username']
+            }
+          }
+          
+      }).catch((err) => { 
+        res.json(err);
+      });
+  
+      const serialized = forumPost.get({ plain: true });
+      res.render('forum-post', serialized);
+    }   
+    
+    else {
       const  forumPost = await Post.findOne({
         where: {
           id: req.params.id,
@@ -82,32 +103,7 @@ router.get('/:id', async (req, res) => {
     });
 
     res.render('forum-post', { forumPost } );
-    // return res.json(forumPost)
     }
-
-    if (!user) {
-      
-      const  forumPost = await Post.findOne({
-          where: {
-              id: req.params.id,
-          },
-          include: {
-            model: Comment,
-            include: {
-              model: User,
-              attributes: [ 'id', 'username']
-            }
-          }
-          
-      }).catch((err) => { 
-        //return res.json(err);
-        console.log(err)
-      });
-  
-      const serialized = forumPost.get({ plain: true });
-      res.render('forum-post', serialized);
-      // res.json(serialized)
-    }   
 });
 
 // post comments to forum
