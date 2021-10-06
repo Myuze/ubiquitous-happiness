@@ -26,8 +26,8 @@ router.get('/', async (req, res) => {
     res
     .status(200)
     .render('forum', { forumPosts });
-  }
-    else if(!user){
+
+  } else {
       const forumData = await Post.findAll(
       ).catch((err) => { 
         res.json(err);
@@ -52,8 +52,7 @@ router.post('/', withAuth, (req, res) => {
           console.log(err);
           res.status(500).json(err);
       });
-}
-  else if (!user){
+  } else {
     res
     .status(400)
     .render('login', { message: 'please login to make a new post'});
