@@ -11,7 +11,6 @@ router.post('/register', async (req, res) => {
       twitch_link: req.body.twitch,
       youtube_link: req.body.youtube,
       bio: req.body.bio
-
     });
 
     req.session.save(() => {
