@@ -11,9 +11,7 @@ router.get('/login', async (req, res) => {
          res
           .status(200)
           .render('login', { mesasage: 'you are already logged in', user }); 
-      }
-
-      if(!user){
+      } else {
           res
           .status(400)
           .render('login');
@@ -23,6 +21,7 @@ router.get('/login', async (req, res) => {
       res.status(500).json(err);
   }
 });
+
 //registration view
 router.get('/register', async (req, res) => {
   const { user } = req.session;
@@ -32,9 +31,7 @@ router.get('/register', async (req, res) => {
          res
           .status(200)
           .render('register', { mesasage: 'you are already registered', user }); 
-      }
-
-      if(!user){
+      } else {
           res
           .status(200)
           .render('register');
@@ -47,6 +44,7 @@ router.get('/register', async (req, res) => {
 
 //new-post view get request to render new-post.handlebars
 router.get('/newPost', withAuth, async (req, res) => {
+<<<<<<< HEAD
     const { user } = req.session;
     
     try {
@@ -95,5 +93,29 @@ router.get('/newPost', withAuth, async (req, res) => {
   router.get('leaderboard', async (req, res) => {
     
   })
+=======
+  try {
+    res.status(200).render('add-post');
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//post route for making a new post inserting into db
+router.post('/newPost', withAuth, async (req, res) => {
+  try {
+    const dbPostData = await Post.create({
+      title: req.body.title,
+      entry: req.body.entry
+  });
+  
+  res.status(200).json(dbPostData);
+  } catch (err) {
+    console.log(err);
+  }
+});
+>>>>>>> 06f2c3f63e79053dc73c7bf698bc9bef34b7dfb4
 
 module.exports = router;

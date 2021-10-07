@@ -31,6 +31,40 @@ router.post('/register', async (req, res) => {
   }
 });
 
+// gets one user by id
+router.get('/:id', async (req, res) => {
+  const { user } = req.session;
+
+  if (!user){
+    const findUser = await User.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).catch((err) => { 
+      res.json(err);
+    });
+
+    const serialized = findUser.get({ plain: true });
+    res.render('profile', serialized);
+  }
+
+  else {
+    const findUser = await User.findOne({
+      where: {
+          id: req.params.id,
+          include: {
+            model: 'User',
+            attributes: [ 'id', 'username' ]
+          }
+      }
+    }).catch((err) => { 
+      res.json(err);
+    });
+
+    res.render('profile', { findUser } );
+  }
+});
+
 // Login
 router.post('/login', async (req, res) => {
   try {
