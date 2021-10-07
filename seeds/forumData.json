@@ -3,7 +3,8 @@
         "title": "this shit fire",
         "entry": "so I heard that there's this really cool streamer...",
         "date-posted": "September 1, 2021",
-        "author": "Florian Meneses"
+        "author": "Florian Meneses",
+        "comments": ["hello", "world", "this is a comment"]
     },
     {
         "title": "awesome streamer!",
