@@ -69,8 +69,7 @@ router.get('/newPost', withAuth, async (req, res) => {
 
   router.get('/profile/:id', withAuth, async (req, res) => {
     console.log(req.body)
-    const  user  = req.session
-    if (user) {
+    console.log(req.session)
       try{
         console.log('user used')
         const userProfile = await User.findOne({
@@ -82,6 +81,7 @@ router.get('/newPost', withAuth, async (req, res) => {
         })
 
         const serialized = userProfile.get({ plain: true })
+        console.log(serialized)
         res
           .status(200)
           .render('profile', serialized)
@@ -90,11 +90,6 @@ router.get('/newPost', withAuth, async (req, res) => {
       catch (err) {
         console.error(err)
       }
-    } else {
-      res
-        .status(200)
-        .render('profile', {message: 'you are not logged in'})
-    }
   })
 
   router.get('leaderboard', async (req, res) => {

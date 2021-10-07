@@ -14,9 +14,16 @@ router.post('/register', async (req, res) => {
     });
 
     req.session.save(() => {
+      req.session.id = dbUserData.id
+      req.session.username = dbUserData.username
+      req.session.twitch_link = dbUserData.twitch_link
+      req.session.youtube_link = dbUserData.youtube_link
+      req.session.bio = dbUserData.bio
       req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
+      res
+      .status(200)
+      .render('home', dbUserData);
     });
   } catch (err) { 
     console.log(err);
@@ -50,6 +57,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+      id = req.session.id
       req.session.loggedIn = true;
 
     });

@@ -1,4 +1,4 @@
-<form action ='api/users/register' method='post' id='register'>
+<form action ='http://localhost:3001/api/users/register' method='post' id='register'>
 <div class='container'>
     <h1>Lets get you signed up!</h1>
 <label  class="form-label" for='email'>Please enter your email.</label>
@@ -7,6 +7,13 @@
             id='email'
             name='email'
             placeholder='Supergoodgamer@email.com'
+            class="form-control"/>
+<label  class="form-label" for='username'>Please enter your username</label>
+<input
+            type='text'
+            id='username'
+            name='username'
+            placeholder='username'
             class="form-control"/>
 <label  class="form-label" for='password'>What would you like to make your password?
   (Please use atleast one capital letter and one number or special character)</label><br />
@@ -31,8 +38,8 @@
 <label  class="form-label" for=''>Please enter your youtube link here(use your channel link)</label><br />
           <input
             type='text'
-            id='twitch_link'
-            name='twitch_link'
+            id='youtube_link'
+            name='youtube_link'
             class="form-control"/>
     <p>By submitting information you agree to our terms found <a href='#'>here</a></p>
 

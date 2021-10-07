@@ -24,7 +24,7 @@
           <a class="light ubMainLink" href="/home">Home</a>
         </li>
         <li>
-          <a class="light ubMainLink" href="/leaderboard">Leaderboard</a>
+          <a class="light ubMainLink" href="/profile/{{id}}">Profile</a>
         </li>
         <li>
           <a class="light ubMainLink" href="/forum">Forums</a>
@@ -35,7 +35,7 @@
         <li>
           <a id="loginModal" class="light ubMainLink" href="#">Login</a>
         </li>
-        {{#if logged_in}}
+        {{#if loggedIn}}
         <li>
           <a class="light ubMainLink" href="/signout">Sign Out</a>
         </li>

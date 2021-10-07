@@ -1,11 +1,12 @@
-<class class="profile-container">
-    <section class="header">
-        <h3 class="author">{{author}}</h3>
-    </section>
-
-    <section class="content">
-        <p class="twitch">{{twitch_link}}</p>
-        <p class="twitch">{{youtube_link}}</p>
-        <p class="twitch">{{bio}}</p>
-    </section>
-</class>
+{{ log 'dbUserData' username }}
+<div class="profile-container">
+    <div class="card" style="width: 18rem;">
+  <img src="/api/users/image" class="card-img-top" alt="profile picture">
+  <div class="card-body">
+    <h5 class="card-title">{{username}}</h5>
+    <p class="card-text">{{bio}}</p>
+    <a href="{{twitch_link}}" class="">Twitch</a>
+    <a href="{{youtube_link}}" class="">YouTube</a>
+  </div>
+</div>
+</div>
