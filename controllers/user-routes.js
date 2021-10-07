@@ -61,9 +61,9 @@ router.post('/newPost', withAuth, async (req, res) => {
       entry: req.body.entry
   });
   
-  res.status(200).json(dbPostData)
+  res.status(200).json(dbPostData);
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
 });
 

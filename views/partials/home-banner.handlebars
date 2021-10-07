@@ -1,10 +1,9 @@
+{{!-- Generate Hero Banner Slideshow from Game DB --}}
+
 {{#if (if_first @index)}}
-<li class="carousel__slide current-slide">
+<div class="carousel-item active">
 {{else}}
-<li class="carousel__slide">
+<div class="carousel-item">
 {{/if}}
-  <a href="{{game_video_URL}}">
-    <h1>{{game_name}}</h1>
-    <img class="carousel__image" src="{{game_image_URL}}" alt="{{game_name}}">
-  </a>
-</li>
+  <img src="{{game_image_URL}}" class="d-block w-100" alt="{{game_name}}">
+</div>
