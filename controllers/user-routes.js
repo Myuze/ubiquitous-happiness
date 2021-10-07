@@ -49,11 +49,11 @@ router.get('/newPost', async (req, res) => {
         if (!user) {
             res
             .status(200)
-            .render('add-post', { message: 'Please login or register to make a new post.'})
+            .render('add-post', { message: 'Please login or register to make a new post.'});
         } else {
           res
            .status(200)
-           .render('add-post') 
+           .render('add-post'); 
        }
 
     } catch (err) {
@@ -64,24 +64,24 @@ router.get('/newPost', async (req, res) => {
 
 //post route for making a new post inserting into db
 router.post('/newPost', async (req, res) => {
-  const user = req.session
+  const user = req.session;
   try {
     if (user){
       res
         .status(400)
-        .redirect('/login', {message: 'please login to make a new post'})
+        .redirect('/login', {message: 'please login to make a new post'});
     } else {
       const dbPostData = await Post.create({
         title: req.body.title,
         entry: req.body.entry
-    })
+    });
       res
         .status(200)
-        .json(dbPostData)
+        .json(dbPostData);
     }
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
-})
+});
 
 module.exports = router;
