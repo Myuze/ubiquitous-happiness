@@ -7,6 +7,7 @@
     "watch": "nodemon server.js",
     "start": "node server.js",
     "seed": "node seeds/seed.js",
+    "sass-w": "sass --watch scss:public/css",
     "lint": "npx eslint **/*.js --quiet && exit 0",
     "lint-fix": "npx eslint **/*.js --fix && exit 0",
     "lint-verbose": "npx eslint **/*.js",

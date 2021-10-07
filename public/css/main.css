@@ -58,13 +58,3 @@ li {
     text-decoration: underline;
 }
 
-/* Home Page Banner CSS */
-.carousel__indicator {
-    margin: 0 0.2rem !important;
-    border: 0 !important;
-    border-radius: 15% !important;
-    width: 40px !important;
-    height: 20px !important;
-    background:rgba(0,0,0,.3) !important;
-    cursor: pointer !important;
-}
