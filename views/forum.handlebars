@@ -1,5 +1,5 @@
-{{!-- <section class="text-center">
-  <h3>UBIQUITOUS COMMUNITY FORUM</h3>
+<section class="text-center">
+  <img class="section-header comm-forum center" src="/images/forum-header.png">
   {{log 'this' forumPost}}
   {{#each forumPosts as |forum|}}
   <a href="/forum/new-post">
@@ -12,75 +12,11 @@
       <div class="card">
         <img class="blog-post-image" src="/images/logo.png">
         <div class="card-text">
-          <h4 class="card-title">{{title}}</h4>
-          <p class="card-author">{{author}}</p>
-        </div>
-        <button class="read-more-btn">Read More</button>
-      </div>
-    </a>
-  </section>
-</section> --}}
-<section class="text-center">
-  <img class="section-header" src="/images/forum-header.png">
-  <a href="/forum/new-post">
-    <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn">CREATE A NEW POST</button>
-    </div>
-  </a>
-  <section class="forum-row-1">
-    <a href="/forum/{{id}}"></a>
-      <div class="card">
-        <img class="blog-post-image" src="/images/logo.png">
-        <div class="card-text">
-          <h4 class="card-title">Title</h4>
-          <p class="card-author">Author</p>
+          <h4 class="card-title center">{{title}}</h4>
+          <p class="card-author center">{{author}}</p>
           <button class="read-more-btn">Read More</button>
         </div>
       </div>
-      <div class="card">
-        <img class="blog-post-image" src="/images/logo.png">
-        <div class="card-text">
-          <h4 class="card-title">Title</h4>
-          <p class="card-author">Author</p>
-          <button class="read-more-btn">Read More</button>
-        </div>
-      </div>
-      </section>
-      <section class="forum-row-2">
-        <div class="card">
-          <img class="blog-post-image" src="/images/logo.png">
-          <div class="card-text">
-            <h4 class="card-title">Title</h4>
-            <p class="card-author">Author</p>
-            <button class="read-more-btn">Read More</button>
-          </div>
-        </div>
-        <div class="card">
-          <img class="blog-post-image" src="/images/logo.png">
-          <div class="card-text">
-            <h4 class="card-title">Title</h4>
-            <p class="card-author">Author</p>
-            <button class="read-more-btn">Read More</button>
-          </div>
-        </div>
-      </section>
-      <section class="forum-row-1">
-        <div class="card">
-          <img class="blog-post-image" src="/images/logo.png">
-          <div class="card-text">
-            <h4 class="card-title">Title</h4>
-            <p class="card-author">Author</p>
-            <button class="read-more-btn">Read More</button>
-          </div>
-        </div>
-        <div class="card">
-          <img class="blog-post-image" src="/images/logo.png">
-          <div class="card-text">
-            <h4 class="card-title">Title</h4>
-            <p class="card-author">Author</p>
-            <button class="read-more-btn">Read More</button>
-          </div>
-        </div>
       </section>
     </a>
   </section>
