@@ -12,6 +12,7 @@ body {
 
 .hero {
     margin-top: 10px;
+    border: solid;
 }
 h6 {
     border: solid 3px white;
@@ -89,7 +90,7 @@ mt-5 {
 .ubMainLink {
     font-family: 'Permanent Marker', cursive;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 :hover.ubMainLink{
