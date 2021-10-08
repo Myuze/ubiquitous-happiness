@@ -22,25 +22,25 @@ router.get('/login', async (req, res) => {
   }
 });
 
-//registration view
-router.get('/register', async (req, res) => {
-  const { user } = req.session;
+// //registration view
+// router.get('/register', async (req, res) => {
+//   const { user } = req.session;
   
-  try {
-      if (user) {
-         res
-          .status(200)
-          .render('register', { mesasage: 'you are already registered', user }); 
-      } else {
-          res
-          .status(400)
-          .render('register');
-      }
-  } catch (err) {
-    console.log(err);
-      res.status(500).json(err);
-  }
-});
+//   try {
+//       if (user) {
+//          res
+//           .status(200)
+//           .render('register', { mesasage: 'you are already registered', user }); 
+//       } else {
+//           res
+//           .status(400)
+//           .render('register');
+//       }
+//   } catch (err) {
+//     console.log(err);
+//       res.status(500).json(err);
+//   }
+// });
 
 //new-post view get request to render new-post.handlebars
 router.get('/newPost', withAuth, async (req, res) => {
