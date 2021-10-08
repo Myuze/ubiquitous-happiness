@@ -10,7 +10,10 @@ body {
     background-color: black;
 }
 
-
+.hero {
+    margin-top: 10px;
+    border: solid;
+}
 h6 {
     border: solid 3px white;
 }
@@ -50,9 +53,14 @@ mt-5 {
 .mt-3 {
     align-items: flex-start;
 }
+
+.mt-5 {
+    border-top: solid white thin;
+}
 .mb-4 {
     margin-top: -2%;
 }
+
 
 .img-fluid {
     height: 450px;
@@ -76,12 +84,17 @@ mt-5 {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    margin-top: 1%;
+}
+
+.section-header {
+    width: 75%;
 }
 
 .ubMainLink {
     font-family: 'Permanent Marker', cursive;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 :hover.ubMainLink{
@@ -92,4 +105,18 @@ li {
     display: inline;
     padding-right: 10px;
     margin-right: 20px;
+}
+
+/*forum advert*/
+.forum-ad-gif {
+    border: solid white thick;
+}
+
+/*footer*/
+.foot {
+    background-color: black;
+}
+
+.icon {
+    background-color: white;
 }

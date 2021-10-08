@@ -1,39 +1,11 @@
-.img-fluid {
-    height: 450px;
+.twitch-card {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 10px;
+    border: white solid thick;
 }
 
-.font-weight-light {
+.section-header {
     margin-top: 10%;
 }
 
-.player-name {
-    font-family: 'Permanent Marker';
-    font-size: 32px;
-    color: lime;
-    background-color:black;
-}
-
-
-.font-weight-light {
-    margin-bottom: 30px;
-    font-family: 'permanent marker';
-    font-size:54px;
-    color: lime;
-}
-
-.t__carousel {
-    height: 500px;
-}
-
-.card-text {
-    background-color: none;
-}
-
-.card-body {
-
-    height: 450px;
-}
-.img {
-    height: 425px;
-    width: -webkit-fill-available;
-}
