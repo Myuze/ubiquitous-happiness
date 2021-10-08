@@ -81,6 +81,10 @@ mt-5 {
     justify-content: space-between;
 }
 
+.section-header {
+    width: 75%;
+}
+
 .ubMainLink {
     font-family: 'Permanent Marker', cursive;
     text-decoration: none;
@@ -95,4 +99,9 @@ li {
     display: inline;
     padding-right: 10px;
     margin-right: 20px;
+}
+
+/*forum advert*/
+.forum-ad-gif {
+    border: solid white thick;
 }
