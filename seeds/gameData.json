@@ -1,5 +1,11 @@
 [
   {
+    "game_name": "custom_hero",
+    "game_image_URL": "/public/images/custom_hero.gif",
+    "game_video_URL": "",
+    "is_banner": true
+  },
+  {
     "game_name": "Metroid",
     "game_image_URL": "https://cdn02.nintendo-europe.com/media/images/10_share_images/portals_3/H2x1_CharacterHub_Metroid_image1600w.jpg",
     "game_video_URL": "https://www.youtube.com/watch?v=8NjCICl7dDo",

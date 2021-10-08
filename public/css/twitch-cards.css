@@ -37,3 +37,9 @@
     height: 425px;
     width: -webkit-fill-available;
 }
+
+.section-header {
+    height:100px;
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
