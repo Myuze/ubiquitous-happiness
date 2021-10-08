@@ -1,0 +1,97 @@
+.comm-forum {
+    height: 150px;
+    margin-top: -3%;
+}
+
+.forum {
+    display: inline-flex;
+}
+
+h3 {
+    font-size:54px;
+    margin-top: 40px;
+    font-family: 'permanent marker';
+    color:lime;
+}
+
+.blog-post-image {
+    height: 250px;
+    width: 250px;
+    border: white solid thin;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.forum-row-1, .forum-row-2, .forum-row-3 {
+    display: flex;
+    margin-top: 5%;
+}
+
+.card {
+    width: 50%;
+    background: linear-gradient(45deg, dimgrey, transparent);
+    border: solid white thick;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom:20px;
+    flex-direction: row;
+}
+
+.card-title {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-family: monospace;
+    font-size:32px;
+    font-weight: bold;
+    color: white;
+}
+
+.card-author {
+    color: white;
+    font-size: 20px;
+    background-color: none;
+    border: solid thin lime;
+}
+.card-text {
+    font-size: 14px;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.card-body {
+    width: 100%;
+}
+
+.read-more-btn {
+    background: black;
+    font-family: 'permanent marker';
+    color: darkkhaki;
+    margin-top: 5%;
+    width: auto;
+    height:64px;
+    font-size: 28px;
+}
+
+.forum {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.btn {
+    font-family: 'Permanent Marker';
+    color:lime;
+    font-size: 22px;
+    background: linear-gradient(360deg, dimgrey, transparent);
+    margin-top: 35px;
+    border: solid white thick;
+}
+
+a {
+    text-decoration-color: darkkhaki;
+}
+
+.center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
