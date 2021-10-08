@@ -1,20 +1,22 @@
 <form action ='api/users/register' method='post' id='register'>
 <div class='container'>
-    <h1>Lets get you signed up!</h1>
+  <div class="header text-center">
+    <img src ="/images/register-header.png" alt="lets get you signed up header">
+  </div>
  <label class="form-label" for='username'>What would you like your Username to be?</label>
-    <div class="input-group mb-3">
+    <div class="input-group">
      <span class="input-group-text" id="basic-addon1">@</span>
   <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
   </div>
-<label  class="form-label" for='email'>Please enter your email.</label>
+<label  class="form-label" for='email'>Please enter your email:</label>
 <input
             type='email'
             id='email'
             name='email'
             placeholder='Supergoodgamer@email.com'
             class="form-control"/>
-<label  class="form-label" for='password'>What would you like to make your password?
-  (Please use atleast one capital letter and one number or special character)</label><br />
+<label  class="form-label" for='password'>Enter your password:
+  (Must include one capital letter & one number or special character)</label><br />
           <input
             type='password'
             id='password'
@@ -27,9 +29,9 @@
             required
             class="form-control"
           />
-<label class="form-label" for='twitchLink'>Enter your twitch name</label>
+<label class="form-label" for='twitchLink'>Enter your twitch name:</label>
 {{!-- Please link your twitch account here(use the twitch.tv link on your channel)</label><br /> --}}
-<div class="input-group mb-3">
+<div class="input-group">
     <span class="input-group-text" id="basic-addon3">https://www.twitch.tv/</span>
           <input
             type='text'
@@ -37,8 +39,8 @@
             name='twitch_link'
             class="form-control"/>
             </div>
-<label  class="form-label" for='youtubeLink'>Please enter your youtube link here(it can be found in your channel settings)</label><br />
-<div class="input-group mb-3">
+<label  class="form-label" for='youtubeLink'>Please enter your youtube link here: (hint: it can be found in your channel settings)</label><br />
+<div class="input-group">
     <span class="input-group-text" id="basic-addon3">https://www.youtube.com/c/</span>
           <input
             type='text'
@@ -50,7 +52,7 @@
 
     <p>By submitting information you agree to our terms found <a href='#'>here</a></p>
 
-        <button type="submit" class="btn btn-primary">Signup</button>
+        <button type="submit" class="btn btn-primary">LET'S GO!</button>
     </div>
   </div>
 </form>

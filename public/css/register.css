@@ -1,0 +1,16 @@
+.header {
+    margin-bottom: 5%;
+    margin-left: -5%;
+}
+.form-label {
+    margin-top: 2%;
+    font-size: 16px;
+    font-family: monospace;
+}
+.btn-primary {
+    background-color:lime;
+    border-color:white;
+    color: black;
+    font-weight: bold;
+    font-family: monospace;
+}
