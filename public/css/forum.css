@@ -26,8 +26,7 @@ h3 {
     margin-top: 5%;
 }
 
-.card {
-    width: 50%;
+.forum-card {
     background: linear-gradient(45deg, dimgrey, transparent);
     border: solid white thick;
     margin-left: 10px;

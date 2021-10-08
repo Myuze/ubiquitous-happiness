@@ -22,27 +22,16 @@
   </div>
 </section>
 
-<section class="twitch-carousel-container text-center">
-  <div>
-    <img class="section-header" src="./images/trending-streams.png">
+<section class="twitch text-center">
+  <img class="section-header" src="./images/trending-streams.png">
+  <div class="twitch-card-container">
+    {{> twitch-cards }}
   </div>
-  <div id="twitchCarousel" class="t__carousel slide w-100" data-ride="t_carousel">
-        <div class="t_carousel-inner w-100" role="listbox">
-            <div class="d-flex carousel-item active twitch-card">
-                {{#each games as |game|}}
-                {{> twitch-cards }}
-                {{/each}}
-              </div>
-            </div>
-        </div>
-    </div>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active carousel__indicator" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"  class="active carousel__indicator" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"  class="active carousel__indicator" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="active carousel__indicator" aria-label="Slide 4"></button>
 </section>
 
-<section class="forum-advert">
+
+
+<section class="forum-advert text-center">
   <div>
     <img class="section-header" src="./images/what-the-blog.png">
   </div>

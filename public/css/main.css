@@ -10,7 +10,9 @@ body {
     background-color: black;
 }
 
-
+.hero {
+    margin-top: 10px;
+}
 h6 {
     border: solid 3px white;
 }
@@ -53,6 +55,7 @@ mt-5 {
 .mb-4 {
     margin-top: -2%;
 }
+
 
 .img-fluid {
     height: 450px;
