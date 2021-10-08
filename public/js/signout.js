@@ -20,3 +20,4 @@ async function signOutHandler(event) {
 document
     .querySelector('#signout-btn')
     .addEventListener('click', signOutHandler);
+    
