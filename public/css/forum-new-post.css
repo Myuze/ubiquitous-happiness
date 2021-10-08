@@ -8,13 +8,14 @@
 
 .new-post-gif {
     height: 500px;
-    width: 100%;
-    margin-top:-42%;
+    width: 70%;
+    margin-top:-28%;
+    margin-left: 1%;
 }
 
 h4 {
-    font-size:32px;
-    font-family: 'permanent marker';
+    font-size:36px;
+    font-family: monospace;
     color: lime;
 }
 
@@ -22,10 +23,15 @@ textarea {
     background-color:rgb(230, 224, 224);
 }
 .post-it-btn {
-    background-color: lime;
-    border-color: white thin solid;
+    background-color: black;
+    border: white thin solid;
     font-family: 'permanent marker';
     font-weight: bold;
     font-size:24px;
+    color: lime;
+}
+
+:hover.post-it-btn {
+    background-color: lime;
     color: black;
 }

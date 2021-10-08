@@ -1,28 +1,7 @@
+/*specs*/
 :root {
     --def-clr-light: white;
     --def-clr-dark: black;
-}
-
-body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-}
-
-.hero {
-    margin-top: 10px;
-    border: solid;
-}
-h6 {
-    border: solid 3px white;
-}
-p {
-    text-align: center;
-    font-family: monospace;
-    margin-top: -5%;
-    background-color: black;
-    font-size: 18px;
 }
 
 .light {
@@ -37,9 +16,46 @@ p {
 .text-uppercase {
     font-size:18px;
     text-align: center;
-    font-family: 'Permanent Marker', cursive;
-    color: limegreen;
+    font-family: 'permanent marker';
 }
+
+/*nav-bar*/
+.ubMainLink {
+    font-family: 'permanent marker';
+    text-decoration: none;
+    font-size: 22px;
+    background-color:black;
+    color: lime;
+    border: white solid thin;
+    padding: 5px;
+}
+
+:hover.ubMainLink{
+    color: black;
+    background-color: lime;
+}
+
+/*body*/
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+li {
+    display: inline;
+    padding-right: 10px;
+    margin-right: 20px;
+}
+
+p {
+    text-align: center;
+    font-family: monospace;
+    margin-top: -5%;
+    background-color: black;
+    font-size: 18px;
+}
+
 
 /*Bootstrap Overrides*/
 mt-5 {
@@ -58,13 +74,9 @@ mt-5 {
 }
 .mb-4 {
     margin-top: -2%;
+    font-size: 20px;
 }
 
-
-.img-fluid {
-    height: 450px;
-    opacity: 0.4;
-}
 /*LOGO*/
 .logo {
     margin-left: 50px;
@@ -87,35 +99,24 @@ mt-5 {
 }
 
 .section-header {
-    width: 75%;
+    width: 60%;
+    height: 150px;
+    margin-bottom:1%;
 }
 
-.ubMainLink {
-    font-family: 'Permanent Marker', cursive;
-    text-decoration: none;
-    font-size: 22px;
-}
 
-:hover.ubMainLink{
-    color: yellowgreen;
-}
-
-li {
-    display: inline;
-    padding-right: 10px;
-    margin-right: 20px;
-}
-
-/*forum advert*/
-.forum-ad-gif {
-    border: solid white thick;
-}
+/* .icon {
+    background-color: white;
+} */
 
 /*footer*/
 .foot {
     background-color: black;
 }
 
-.icon {
-    background-color: white;
+h6 {
+    border: solid thin white;
+    background-color: black;
+    color: lime;
+    margin-top: 1%;
 }

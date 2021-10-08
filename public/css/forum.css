@@ -8,21 +8,23 @@ h3 {
 
 .forum-header {
     height:200px;
-    width: 60%;
+    width: 70%;
+    margin-top: 2%;
 }
 
 .create-new-btn {
-    font-family: monospace;
-    color:lime;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: white;
-    background: linear-gradient(180deg, dimgrey, transparent);
-    border: solid white thick;
-    height: 50px;
-    width: 55%;
-    margin-bottom:5%;
+    background-color:black;
+    border: white thin solid;
+    font-family: 'permanent marker';
+    font-size: 28px;
+    color: lime;
+    margin-bottom: 5%;
+    width: 40%;   
+}
+
+:hover.create-new-btn {
+    background-color: lime;
+    color: black;
 }
 .blog-post-image {
     height: 90%;
@@ -64,11 +66,15 @@ h3 {
 
 .read-more-btn {
     font-family: 'Permanent Marker';
-    color:lime;
+    color:black;
     font-size: 18px;
-    background: black;
+    background: lightgrey;
     border: solid white thin;
     height: 30px;
     width: 60%;
 }
 
+:hover.read-more-btn {
+    background-color: black;
+    color: white;
+}

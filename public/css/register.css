@@ -14,3 +14,8 @@
     font-weight: bold;
     font-family: monospace;
 }
+
+:hover.btn-primary {
+    background-color: lime;
+    color: black;
+}
