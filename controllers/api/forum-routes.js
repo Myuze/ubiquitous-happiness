@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 //all forum routes in the api have been updated  as of 10/2/2021 @ 12:51pm
 
 //gets all forum posts
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   console.log(req.session);
 
   const { loggedIn } = req.session
