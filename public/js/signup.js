@@ -33,3 +33,4 @@ async function signUpHandler(event) {
 document
     .querySelector('#register')
     .addEventListener('submit', signUpHandler);
+    
