@@ -1,5 +1,7 @@
+{{!-- Generate Hero Indicator Nav Buttons --}}
+
 {{#if (if_first @index)}}
-<button class="carousel__indicator current-slide"></button>
+<button type="button" data-bs-target="#herosel" data-bs-slide-to="{{@index}}" class="carousel__indicator active" aria-current="true" aria-label="Slide {{@index}}"></button>
 {{else}}
-<button class="carousel__indicator"></button>
+<button type="button" data-bs-target="#herosel" data-bs-slide-to="{{@index}}" class="carousel__indicator" aria-label="Slide {{@index}}"></button>
 {{/if}}

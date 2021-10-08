@@ -1,10 +1,11 @@
 const sequelize = require('../config/connection');
-const { User, Game, GameCategory, Post } = require('../models');
+const { User, Game, GameCategory, Post, Comment } = require('../models');
 
 const userData = require('./userData.json');
 const gameData = require('./gameData.json');
 const GameCategoryData = require('./gameCategoryData.json');
 const forumData = require('./forumData.json');
+const commentData = require('./commentData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -25,6 +26,11 @@ const seedDatabase = async () => {
   });
 
   await Post.bulkCreate(forumData, {
+    individualHooks: true,
+    returning: true,
+  });
+  
+  await Comment.bulkCreate(commentData, {
     individualHooks: true,
     returning: true,
   });

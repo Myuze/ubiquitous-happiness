@@ -7,6 +7,7 @@
     "watch": "nodemon server.js",
     "start": "node server.js",
     "seed": "node seeds/seed.js",
+    "sass-w": "sass --watch scss:public/css",
     "lint": "npx eslint **/*.js --quiet && exit 0",
     "lint-fix": "npx eslint **/*.js --fix && exit 0",
     "lint-verbose": "npx eslint **/*.js",
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/Myuze/ubiquitous-happiness#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bootstrap": "^5.1.2",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -38,6 +40,7 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "husky": "^7.0.0",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "sass": "^1.42.1"
   }
 }

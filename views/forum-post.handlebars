@@ -1,7 +1,7 @@
 <class class="container">
     <section class="header">
         <h1 class="forum-title">{{title}}</h1>
-        <a href="/profile/{{author_id}}">
+        <a href="/user/{{author_id}}">
             <h3 class="author-id">{{author}}</h3>
         </a>
     </section>
@@ -9,15 +9,24 @@
     <section class="entry">
         <p class="forum-entry">{{entry}}</p>
     </section>
-
-    <section class="comments">
-    {{> comments}}
-    </section>
 </class>
 
-<a href="/forum/new-post">
+<form class='new-comment'>
+    <label for='comment'>Comment</label>
+    <textarea id='comment' name='comment' rows='1' cols='30'></textarea>
+    <button type='submit' value='Submit'>Submit</button>
+</form>
+
+<div class="comments-container">
+    {{> comments }}
+</div>
+
+<a href="/user/newPost">
     <button class="create-new-post">Add Post</button>
 </a>
+
 <a href="/forum">
     <button class="back-button">Back</button>
 </a>
+
+<script src="/js/new-comment.js"></script>

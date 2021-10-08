@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User , Post } = require('../../models');
+const { User , Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 //all forum routes in the api have been updated  as of 10/2/2021 @ 12:51pm
 
@@ -26,74 +26,15 @@ router.get('/', async (req, res) => {
     res
     .status(200)
     .render('forum', { forumPosts });
-  }
-    else if(!user){
+
+  } else {
       const forumData = await Post.findAll(
       ).catch((err) => { 
         res.json(err);
       });
         const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
-      console.log(forumPosts);
       res.render('forum', { forumPosts });
     }
-});
-
-// gets one forum post by id
-router.get('/:id', async (req, res) => {
-    const { user } = req.session;
-
-    if (user){
-      const  forumPost = await Post.findOne({
-        where: {
-            id: req.params.id,
-            include: {
-              model: 'User',
-              attributes: [ 'id', 'username' ]
-            }
-        }
-    }).catch((err) => { 
-      res.json(err);
-    });
-
-    res.render('forum-post', { forumPost } );
-    }
-
-    else if (!user){
-    const  forumPost = await Post.findOne({
-        where: {
-            id: req.params.id
-        }
-    }).catch((err) => { 
-      res.json(err);
-    });
-
-    const serialized = forumPost.get({ plain: true });
-    res.render('forum-post', serialized);
-  }});
-
-//post route for making a new post inserting into db
-router.post('/', async (req, res) => {
-  const user = req.session;
-  try {
-    if (!user){
-      res
-        .status(400)
-        .redirect('/login', {message: 'please login to make a new post'});
-    }
-
-    if (user){
-      const dbPostData = await Post.create({
-        title: req.body.title,
-        entry: req.body.content,
-        user_id: req.session.user_id
-    });
-      res
-        .status(200)
-        .json(dbPostData);
-    }
-  } catch (err) {
-    console.log(err);
-  }
 });
 
 router.post('/', withAuth, (req, res) => {
@@ -111,12 +52,82 @@ router.post('/', withAuth, (req, res) => {
           console.log(err);
           res.status(500).json(err);
       });
-}
-  else if (!user){
+  } else {
     res
     .status(400)
     .render('login', { message: 'please login to make a new post'});
   }
 });
+
+
+// gets one forum post by id
+router.get('/:id', async (req, res) => {
+    const { user } = req.session;
+
+    if (!user) {
+      const  forumPost = await Post.findOne({
+          where: {
+              id: req.params.id,
+          },
+          include: {
+            model: Comment,
+            include: {
+              model: User,
+              attributes: [ 'id', 'username']
+            }
+          }
+          
+      }).catch((err) => { 
+        res.json(err);
+      });
+  
+      const serialized = forumPost.get({ plain: true });
+      res.render('forum-post', serialized);
+    }   
+    
+    else {
+      const  forumPost = await Post.findOne({
+        where: {
+          id: req.params.id,
+        },
+        include: {
+          model: Comment,
+          include: {
+            model: User,
+            attributes: [ 'id', 'username']
+          }
+        }
+    }).catch((err) => { 
+      return res.json(err);
+    });
+
+    res.render('forum-post', { forumPost } );
+    }
+});
+
+// post comments to forum
+router.post('/:id', async (req, res) => {
+  const user = req.session;
+  
+  try {
+    if (!user){
+      res
+        .status(400)
+        .redirect('/login', {message: 'please login to make a new post'});
+    }
+    else {
+      const commentData = await Comment.create({
+        comment_entry: req.body.comment_entry,
+        forum_id: req.body.forum_id
+    });
+      res
+        .status(200)
+        .json(commentData);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 
 module.exports = router;
