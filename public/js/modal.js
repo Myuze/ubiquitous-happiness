@@ -6,7 +6,7 @@ var loginModal = document.getElementById('loginModal');
 var closeBtn = document.getElementById('closeBtn');
 
 //Listen for click to init on modal here
-loginModal.addEventListener('click', openModal);
+loginModal && loginModal.addEventListener('click', openModal);
 //Listen for close click
 closeBtn.addEventListener('click', closeModal);
 
