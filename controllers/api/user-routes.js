@@ -15,7 +15,7 @@ router.post('/register', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      
       res.status(200).json(dbUserData);
     });
   } catch (err) { 
