@@ -107,25 +107,25 @@ router.get('/:id', async (req, res) => {
 
 // post comments to forum
 router.post('/:id', async (req, res) => {
-  const user = req.session
+  const user = req.session;
   
   try {
     if (!user){
       res
         .status(400)
-        .redirect('/login', {message: 'please login to make a new post'})
+        .redirect('/login', {message: 'please login to make a new post'});
     }
     else {
       const commentData = await Comment.create({
         comment_entry: req.body.comment_entry,
         forum_id: req.body.forum_id
-    })
+    });
       res
         .status(200)
-        .json(commentData)
+        .json(commentData);
     }
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
 });
 

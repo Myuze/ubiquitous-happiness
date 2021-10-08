@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post } = require('../models');
+const withAuth = require('../utils/auth');
 
 //login view
 router.get('/login', async (req, res) => {
@@ -42,46 +43,28 @@ router.get('/register', async (req, res) => {
 });
 
 //new-post view get request to render new-post.handlebars
-router.get('/newPost', async (req, res) => {
-    const { user } = req.session;
-    
-    try {
-        if (!user) {
-            res
-            .status(200)
-            .render('add-post', { message: 'Please login or register to make a new post.'})
-        } else {
-          res
-           .status(200)
-           .render('add-post') 
-       }
+router.get('/newPost', withAuth, async (req, res) => {
+  try {
+    res.status(200).render('add-post');
 
-    } catch (err) {
-      console.log(err);
-        res.status(500).json(err);
-    }
-  });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 //post route for making a new post inserting into db
-router.post('/newPost', async (req, res) => {
-  const user = req.session
+router.post('/newPost', withAuth, async (req, res) => {
   try {
-    if (user){
-      res
-        .status(400)
-        .redirect('/login', {message: 'please login to make a new post'})
-    } else {
-      const dbPostData = await Post.create({
-        title: req.body.title,
-        entry: req.body.entry
-    })
-      res
-        .status(200)
-        .json(dbPostData)
-    }
+    const dbPostData = await Post.create({
+      title: req.body.title,
+      entry: req.body.entry
+  });
+  
+  res.status(200).json(dbPostData);
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
-})
+});
 
 module.exports = router;

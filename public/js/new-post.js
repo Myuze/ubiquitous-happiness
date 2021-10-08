@@ -4,7 +4,7 @@ async function newFormHandler(event) {
     const title = document.querySelector('#forum_title').value;
     const entry = document.querySelector('#entry').value;
   
-    const response = await fetch(`/user/newPost`, {
+    const response = await fetch('/user/newPost', {
       method: 'POST',
       body: JSON.stringify({
         title,

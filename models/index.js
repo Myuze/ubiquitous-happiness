@@ -31,19 +31,19 @@ Data.belongsTo(User, {
 
 User.hasMany(Comment, {
   foreignKey: 'author_id',
-})
+});
 
 Comment.belongsTo(User, {
   foreignKey: 'author_id',
-})
+});
 
 Post.hasMany(Comment, {
   foreignKey: 'forum_id'
-})
+});
 
 Comment.belongsTo(Post, {
   foreignKey: 'forum_id'
-})
+});
 
 // Game Category Relationships
 User.belongsToMany(Game, {
