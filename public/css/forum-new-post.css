@@ -1,7 +1,31 @@
-.container{
-    margin-top: 5%;
+.blurb {
+    width: 75%;
+    margin: auto;
+    font-family: monospace;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
-.forum-header {
+.new-post-gif {
+    height: 500px;
+    width: 100%;
+    margin-top:-42%;
+}
+
+h4 {
+    font-size:32px;
+    font-family: 'permanent marker';
     color: lime;
+}
+
+textarea {
+    background-color:rgb(230, 224, 224);
+}
+.post-it-btn {
+    background-color: lime;
+    border-color: white thin solid;
+    font-family: 'permanent marker';
+    font-weight: bold;
+    font-size:24px;
+    color: black;
 }
