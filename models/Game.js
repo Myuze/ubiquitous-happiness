@@ -21,13 +21,17 @@ Game.init(
     game_video_URL: {
       type: DataTypes.STRING
     },
+    is_banner: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
     game_category_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'game_category',
         key: 'id'
       }
-    }
+    },
   },
   {
     sequelize,

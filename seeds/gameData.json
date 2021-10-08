@@ -2,26 +2,31 @@
   {
     "game_name": "Metroid",
     "game_image_URL": "https://cdn02.nintendo-europe.com/media/images/10_share_images/portals_3/H2x1_CharacterHub_Metroid_image1600w.jpg",
-    "game_video_URL": "https://www.youtube.com/watch?v=8NjCICl7dDo"
+    "game_video_URL": "https://www.youtube.com/watch?v=8NjCICl7dDo",
+    "is_banner": true
   },
   {
     "game_name": "Smash Bros Ultimate",
     "game_image_URL": "https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_SuperSmashBrosUltimate_02_image1600w.jpg",
-    "game_video_URL": "https://www.youtube.com/watch?v=tWo9wfsnj7M"
+    "game_video_URL": "https://www.youtube.com/watch?v=tWo9wfsnj7M",
+    "is_banner": true
   },
   {
     "game_name": "Nier: Automata",
     "game_image_URL": "https://cdn.akamai.steamstatic.com/steam/apps/524220/header.jpg?t=1624266255",
-    "game_video_URL": "https://www.youtube.com/watch?v=8ffrz7usz6Y"
+    "game_video_URL": "https://www.youtube.com/watch?v=8ffrz7usz6Y",
+    "is_banner": true
   },
   {
     "game_name": "Apex Legends",
     "game_image_URL": "https://cdn.charlieintel.com/wp-content/uploads/2021/06/29062524/Apex-Legends-roster.jpg",
-    "game_video_URL": "https://www.youtube.com/watch?v=KfCgnVpHv50"
+    "game_video_URL": "https://www.youtube.com/watch?v=KfCgnVpHv50",
+    "is_banner": true
   },
   {
     "game_name": "Minecraft",
     "game_image_URL": "https://image.api.playstation.com/vulcan/img/rnd/202011/0411/QgJxoWfABXJ6qKpJORB7Lb1I.png",
-    "game_video_URL": "https://www.youtube.com/watch?v=5oghqTROa7o"
+    "game_video_URL": "https://www.youtube.com/watch?v=5oghqTROa7o",
+    "is_banner": true
   }
 ]

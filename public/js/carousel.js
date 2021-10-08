@@ -1,10 +1,5 @@
-// Controls Hero Banner Navigation on Homepage
-const track = document.querySelector('.carousel__track');
-const slides = Array.from(track.children);
-const nextButton = document.querySelector('.carousel__button--right');
-const prevButton = document.querySelector('.carousel__button--left');
-const dotsNav = document.querySelector('.carousel__nav');
-const dots = Array.from(dotsNav.children);
+// Settings for Homepage hero banner
+
 
 const slideWidth = slides[0].getBoundingClientRect().width;
 
@@ -67,4 +62,10 @@ dotsNav.addEventListener('click', e => {
   // Move to the next slide by nav button selected
   moveToSlide(track, currentSlide, targetSlide);
   updateDots(currentDot, targetDot);
+});
+var myCarousel = document.querySelector('#herosel');
+var carousel = new bootstrap.Carousel(myCarousel, {
+  interval: 10000,
+  keyboard: true,
+  cycle: true,
 });

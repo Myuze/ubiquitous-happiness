@@ -27,15 +27,18 @@ var form = document.getElementById('info');
 //Blocks button from reloading page and calls functions to occur
 submit.addEventListener('click', function (e) {
   e.preventDefault();
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
+  var username = document.getElementById('modalUsername').value;
+  var email = document.getElementById('modalEmail').value;
+  var password = document.getElementById('modalPassword').value;
   fetch('/api/users/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify( {
-      email, password
+      username,
+      email,
+      password
     })
   })
   .then(res => closeModal());

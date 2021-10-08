@@ -1,3 +1,4 @@
+
 <section class="text-center">
   <img class="section-header comm-forum center" src="/images/forum-header.png">
   {{log 'this' forumPost}}
@@ -21,3 +22,20 @@
     </a>
   </section>
 </section>
+
+<h3>This is the Forum</h3>
+
+{{#each forumPosts as |forum|}}
+<section class="forums">
+      <a href="/forum/{{id}}">
+          <div class="blog-post-header">
+            <h4>{{title}}</h1>
+          </div>
+      </a>
+</section>
+{{/each}}
+
+<a href="/user/newPost">
+    <button class="create-new-post">Add Post</button>
+</a>
+
