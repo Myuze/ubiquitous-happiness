@@ -53,6 +53,10 @@ mt-5 {
 .mt-3 {
     align-items: flex-start;
 }
+
+.mt-5 {
+    border-top: solid white thin;
+}
 .mb-4 {
     margin-top: -2%;
 }
