@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/Myuze/ubiquitous-happiness#readme",
   "dependencies": {
+    "autoprefixer": "^10.3.7",
     "bcrypt": "^5.0.1",
     "bootstrap": "^5.1.2",
     "connect-session-sequelize": "^7.1.2",
@@ -35,6 +36,7 @@
     "express-session": "^1.17.2",
     "mdb-ui-kit": "^3.9.0",
     "mysql2": "^2.3.0",
+    "postcss-cli": "^9.0.1",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {

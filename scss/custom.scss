@@ -8,6 +8,8 @@
 $carousel-indicator-width: 100px;
 $carousel-indicator-height: 20px;
 $carousel-indicator-active-bg: lime;
+$body-bg: black;
+$body-color: white;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
@@ -23,6 +25,9 @@ $carousel-indicator-active-bg: lime;
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/helpers";
 @import "../node_modules/bootstrap/scss/carousel";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/card";
 
 // 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../node_modules/bootstrap/scss/utilities/api";
