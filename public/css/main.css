@@ -79,6 +79,7 @@ mt-5 {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    margin-top: 1%;
 }
 
 .section-header {
@@ -104,4 +105,13 @@ li {
 /*forum advert*/
 .forum-ad-gif {
     border: solid white thick;
+}
+
+/*footer*/
+.foot {
+    background-color: black;
+}
+
+.icon {
+    background-color: white;
 }
