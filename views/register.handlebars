@@ -1,4 +1,4 @@
-<form action ='api/users/register' method='post' id='register'>
+<form id='register'>
 <div class='container'>
   <div class="header text-center">
     <img src ="/images/register-header.png" alt="lets get you signed up header">
@@ -6,12 +6,12 @@
  <label class="form-label" for='username'>What would you like your Username to be?</label>
     <div class="input-group">
      <span class="input-group-text" id="basic-addon1">@</span>
-  <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" id="username-signup" name="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
   </div>
 <label  class="form-label" for='email'>Please enter your email:</label>
 <input
             type='email'
-            id='email'
+            id='email-signup'
             name='email'
             placeholder='Supergoodgamer@email.com'
             class="form-control"/>
@@ -19,7 +19,7 @@
   (Must include one capital letter & one number or special character)</label><br />
           <input
             type='password'
-            id='password'
+            id='password-signup'
             name='password'
             minlength='8'
             maxlength='50'
@@ -56,3 +56,5 @@
     </div>
   </div>
 </form>
+
+<script src="/js/signup.js"></script>

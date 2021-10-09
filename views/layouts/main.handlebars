@@ -34,14 +34,15 @@
         <li>
           <a class="light ubMainLink" href="/forum">Forums</a>
         </li>
+        {{#if loggedIn}}
+        <li>
+          <a class="light ubMainLink" id="signout-btn">Sign Out</a>
+          <script src="/js/signout.js"></script>
+        </li>
+        {{else}}
         <li>
           <a class="light ubMainLink" href="/register">Register</a>
         </li>
-        {{#if loggedIn}}
-        <li>
-          <a class="light ubMainLink" href="/api/user/logout">Sign Out</a>
-        </li>
-        {{else}}
         <li>
           <a id="loginModal" class="light ubMainLink" href="#">Login</a>
         </li>
