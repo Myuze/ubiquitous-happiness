@@ -1,7 +1,7 @@
 async function signOutHandler(event) {
     event.preventDefault();
     
-    const response = await fetch(`/api/users/logout`, {
+    const response = await fetch('/api/users/logout', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -13,7 +13,7 @@ async function signOutHandler(event) {
     } else {
       alert('Failed to sign out user');
       const test = await response.json();
-      console.log(test)
+      console.log(test);
     }
   }
 

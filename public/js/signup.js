@@ -7,7 +7,7 @@ async function signUpHandler(event) {
     const twitch_link = document.querySelector('#twitch_link'.value);
     const youtube_link = document.querySelector('#youtube_link'.value);
     
-    const response = await fetch(`/api/users/register`, {
+    const response = await fetch('/api/users/register', {
       method: 'POST',
       body: JSON.stringify({
         username,
@@ -26,7 +26,7 @@ async function signUpHandler(event) {
     } else {
       alert('Failed to add user');
       const test = await response.json();
-      console.log(test)
+      console.log(test);
     }
   }
 

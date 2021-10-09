@@ -1,10 +1,10 @@
 <div class="card">
     <div class="card-body" style="background-color: white; color: black; padding: 5rem">
-        <h1 class="card-subtitle">{{title}}</h1>
-        <a href="/user/{{author_id}}">
+        <h1 class="card-subtitle">{{serialized.title}}</h1>
+        <a href="/user/{{serialized.author_id}}">
             <h1 class="card-subtitle">{{user.username}}</h3>
         </a>
-        <p class="card-text" style="background-color: white; color: black">{{entry}}</p>
+        <p class="card-text" style="background-color: white; color: black">{{serialized.entry}}</p>
     </div>
 </div>
 
@@ -13,7 +13,11 @@
         <h4 for='comment' style="background-color: #7ED857; color: black;">Comment</h4>
         <div class="display" style="display: flex; align-items: flex-end">
             <textarea id='comment' name='comment' rows='3' cols='30'></textarea>
+            {{!-- {{#if loggedIn}} --}}
             <button style="margin-left: 1rem;" class="btn btn-dark" type='submit' value='Submit'>Submit</button>
+            {{!-- {{else}}
+            <button style="margin-left: 1rem;" id="commentModal" class="btn btn-dark" type='submit' value='Submit'>Login</button>
+            {{/if}} --}}
         </div>
     </form>
 
@@ -22,9 +26,7 @@
 <div class="comments-container">
     {{> comments }}
 </div>
-{{#unless user}}
-<button type='submit' class='commentLogin' id='commentLogin'>Login</button>
-{{/unless}}
+
 <a href="/user/newPost">
     <button class="btn btn-outline-light create-new-post">Add Post</button>
 </a>
