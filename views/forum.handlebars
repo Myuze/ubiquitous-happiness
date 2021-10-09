@@ -3,9 +3,13 @@
 </div>
 <a href="/forum/new-post">
   <div class="d-grid gap-2 col-6 mx-auto">
+    {{#if loggedIn}}
     <a href="/user/newPost">
       <button class="create-new-btn">CREATE A NEW POST</button>
     </a>
+    {{else}}
+    <button id='forumModal' class='forumModal'>Login</button>
+    {{/if}}
   </div>
 </a>
 

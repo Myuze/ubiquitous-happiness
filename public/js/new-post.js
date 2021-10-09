@@ -18,7 +18,7 @@ async function newFormHandler(event) {
     if (response.ok) {
       document.location.replace('/forum');
     } else {
-      alert('Failed to add post');
+    openModal();
     }
   }
 

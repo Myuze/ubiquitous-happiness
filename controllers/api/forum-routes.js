@@ -104,16 +104,17 @@ router.get('/:id', async (req, res) => {
 
 // post comments to forum
 router.post('/:id', withAuth, async (req, res) => {
-
+  
   try {
-    const commentData = await Comment.create({
-      comment_entry: req.body.comment_entry,
-      forum_id: req.body.forum_id,
-      author_id: req.session.user_id
-    });
-    res
-      .status(200)
-      .json(commentData);
+      const commentData = await Comment.create({
+        comment_entry: req.body.comment_entry,
+        forum_id: req.body.forum_id,
+        author_id: req.session.user_id,
+      });
+      res
+        .status(200)
+        .json(commentData);
+    
   } catch (err) {
     console.log(err);
   }

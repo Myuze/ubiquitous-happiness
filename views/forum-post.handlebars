@@ -22,7 +22,9 @@
 <div class="comments-container">
     {{> comments }}
 </div>
-
+{{#unless user}}
+<button type='submit' class='commentLogin' id='commentLogin'>Login</button>
+{{/unless}}
 <a href="/user/newPost">
     <button class="btn btn-outline-light create-new-post">Add Post</button>
 </a>
