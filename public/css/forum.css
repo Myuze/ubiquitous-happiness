@@ -52,6 +52,15 @@ h3 {
     color: white;
 }
 
+.card-subtitle {
+    font-family: monospace;
+    margin-bottom: 2%;
+}
+
+.card-text {
+    margin-bottom: 2%;
+}
+
 .card-author {
     color: white;
     font-size: 20px;
