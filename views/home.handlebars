@@ -3,12 +3,16 @@
   <div id="herosel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
     {{#each games as |game|}}
-      {{> home-button-nav }}
+      {{#if game.is_banner}}
+        {{> home-button-nav }}
+      {{/if}}
     {{/each}}
     </div>
     <div class="carousel-inner">
       {{#each games as |game|}}
-        {{> home-banner }}
+        {{#if game.is_banner}}
+          {{> home-banner }}
+        {{/if}}
       {{/each}}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#herosel" data-bs-slide="prev">
@@ -25,7 +29,11 @@
 <section class="twitch text-center">
   <img class="section-header" src="/images/trending-streams.png">
   <div class="twitch-card-container">
-    {{> twitch-cards }}
+    {{#each games as |game|}}
+      {{#unless game.is_banner}}
+        {{> twitch-cards }}
+      {{/unless}}
+    {{/each}}
   </div>
 </section>
 

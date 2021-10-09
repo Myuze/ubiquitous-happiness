@@ -21,7 +21,7 @@
     "game_name": "Nier: Automata",
     "game_image_URL": "https://cdn.akamai.steamstatic.com/steam/apps/524220/header.jpg?t=1624266255",
     "game_video_URL": "https://www.youtube.com/watch?v=8ffrz7usz6Y",
-    "is_banner": true
+    "is_banner": false
   },
   {
     "game_name": "Apex Legends",
@@ -33,6 +33,6 @@
     "game_name": "Minecraft",
     "game_image_URL": "https://image.api.playstation.com/vulcan/img/rnd/202011/0411/QgJxoWfABXJ6qKpJORB7Lb1I.png",
     "game_video_URL": "https://www.youtube.com/watch?v=5oghqTROa7o",
-    "is_banner": true
+    "is_banner": false
   }
 ]
