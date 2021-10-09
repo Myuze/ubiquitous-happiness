@@ -27,7 +27,6 @@ var form = document.getElementById('info');
 //Blocks button from reloading page and calls functions to occur
 submit.addEventListener('click', function (e) {
   e.preventDefault();
-  var username = document.getElementById('modalUsername').value;
   var email = document.getElementById('modalEmail').value;
   var password = document.getElementById('modalPassword').value;
   fetch('/api/users/login', {
@@ -36,7 +35,6 @@ submit.addEventListener('click', function (e) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify( {
-      username,
       email,
       password
     })
