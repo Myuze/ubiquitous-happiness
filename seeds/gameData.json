@@ -1,7 +1,7 @@
 [
   {
-    "game_name": "custom_hero",
-    "game_image_URL": "/public/images/custom_hero.gif",
+    "game_name": "custom-hero",
+    "game_image_URL": "/images/custom-hero.gif",
     "game_video_URL": "",
     "is_banner": true
   },
