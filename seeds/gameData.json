@@ -2,7 +2,7 @@
   {
     "game_name": "custom-hero",
     "game_image_URL": "/images/custom-hero.gif",
-    "game_video_URL": "",
+    "game_video_URL": "https://www.youtube.com/watch?v=HZtc5-syeAk",
     "is_banner": true
   },
   {
@@ -27,7 +27,7 @@
     "game_name": "Apex Legends",
     "game_image_URL": "https://cdn.charlieintel.com/wp-content/uploads/2021/06/29062524/Apex-Legends-roster.jpg",
     "game_video_URL": "https://www.youtube.com/watch?v=KfCgnVpHv50",
-    "is_banner": true
+    "is_banner": false
   },
   {
     "game_name": "Minecraft",
