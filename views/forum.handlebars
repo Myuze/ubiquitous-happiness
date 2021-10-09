@@ -1,15 +1,24 @@
-<h3>This is the Forum</h3>
+<section class="forum text-center">
+  <img class="forum-header" src="./images/forum-page-header.png">
+</div>
+<a href="/forum/new-post">
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <a href="/user/newPost">
+      <button class="create-new-btn">CREATE A NEW POST</button>
+    </a>
+  </div>
+</a>
 
-{{#each forumPosts as |forum|}}
-<section class="forums">
-      <a href="/forum/{{id}}">
-          <div class="blog-post-header">
-            <h4>{{title}}</h1>
-          </div>
-      </a>
-</section>
+<div class="card-group">
+  {{#each forumPosts as |forum|}}
+  <a href="/forum/{{id}}"></a>
+  <div class="card forum-card">
+    <img class="blog-post-image" src="/images/logo.png">
+    <div class="card-body">
+      <h4 class="card-title">{{title}}</h4>
+      <p class="card-author">{{author}}</p>
+      <button class="read-more-btn">Read More</button>
+    </div>
+  </div>
 {{/each}}
 
-<a href="/user/newPost">
-    <button class="create-new-post">Add Post</button>
-</a>

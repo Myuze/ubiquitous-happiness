@@ -9,23 +9,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 {{! boostrap 5 cdn link}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+<link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
 {{! This gives access to style.css where styling can be applied}}
 <link rel="stylesheet" href="/css/modal.css">
 <link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/forum.css">
+<link rel="stylesheet" href="/css/forum-new-post.css">
+<link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
   <header class="main-header dark">
     <div class="logo">
-      <p class="light logo-text">UBI <br>QUIT<br><span class="underline">O</span>US</p>
+      <img class="logo-image" src="/images/logo.png" alt="ubiquitous-logo">
     </div>
     <nav class="main-nav">
       <ul>
         <li>
           <a class="light ubMainLink" href="/home">Home</a>
-        </li>
-        <li>
-          <a class="light ubMainLink" href="/leaderboard">Leaderboard</a>
         </li>
         <li>
           <a class="light ubMainLink" href="/forum">Forums</a>
@@ -51,9 +55,9 @@
         {{{ body }}}
     </main>
     <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-lg-start text-muted foot">
   <!-- Section: Social media -->
-  <section
+  {{!-- <section
     class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
   >
     <!-- Left -->
@@ -63,8 +67,8 @@
     <!-- Left -->
 
     <!-- Right -->
-    <div>
-      <a href="" class="me-4 text-reset">
+    <div> --}}
+      {{!-- <a href="" class="me-4 text-reset">
         <img class="fab fa-facebook-f"></img>
       </a>
       <a href="" class="me-4 text-reset">
@@ -81,10 +85,10 @@
       </a>
       <a href="" class="me-4 text-reset">
         <i class="fab fa-github"></i>
-      </a>
+      {{!-- </a> --}}
     </div>
     <!-- Right -->
-  </section>
+  </section> --}}
   <!-- Section: Social media -->
 
   <!-- Section: Links  -->
@@ -106,16 +110,19 @@
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
+            Links
           </h6>
           <p>
             <a href="/register" class="text-reset">Register</a>
+          </p>
+          <p>
+            <a href="/forum" class="text-reset">Forum</a>
           </p>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
             Contact
@@ -184,6 +191,7 @@
   <h1>Hol' up yo!</h1>
 {{/unless}}
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 <script src='/js/modal.js'></script>
 
 </body>

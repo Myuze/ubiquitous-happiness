@@ -1,25 +1,41 @@
 {{!-- // Home page carousel and game banners --}}
-    
-<div id="herosel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-  {{#each games as |game|}}
-    {{> home-button-nav }}
-  {{/each}}
-  </div>
-  <div class="carousel-inner">
+<section class="hero">   
+  <div id="herosel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
     {{#each games as |game|}}
-      {{> home-banner }}
+      {{> home-button-nav }}
     {{/each}}
+    </div>
+    <div class="carousel-inner">
+      {{#each games as |game|}}
+        {{> home-banner }}
+      {{/each}}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#herosel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#herosel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#herosel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#herosel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+</section>
+
+<section class="twitch text-center">
+  <img class="section-header" src="./images/trending-streams.png">
+  <div class="twitch-card-container">
+    {{> twitch-cards }}
+  </div>
+</section>
+
+
+
+<section class="forum-advert text-center">
+    <img class="section-header" src="./images/what-the-blog.png">
+    <img class="forum-ad-gif" src="./images/forum-advert.gif">
+</section>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 <script src='/js/carousel.js'></script>
