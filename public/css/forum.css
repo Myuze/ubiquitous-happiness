@@ -12,7 +12,7 @@ h3 {
     margin-top: 2%;
 }
 
-.create-new-btn {
+.create-new-btn, .forumModal {
     background-color:black;
     border: white thin solid;
     font-family: 'permanent marker';

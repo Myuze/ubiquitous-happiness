@@ -7,20 +7,20 @@ const withAuth = require('../../utils/auth');
 router.get('/', async (req, res) => {
   console.log(req.session);
 
-  const { loggedIn } = req.session
+  const { loggedIn } = req.session;
   try {
     const forumData = await Post.findAll({
       include: {
         model: User,
         attributes: ['id', 'username']
       }
-    })
+    });
     const forumPosts = forumData.map((fPost) => fPost.get({ plain: true }));
-    console.log(forumPosts)
+    console.log(forumPosts);
     res.render('forum', { forumPosts, loggedIn });
   } catch (err) {
       res.json(err);
-  };
+  }
 
 });
 
@@ -50,6 +50,8 @@ router.post('/', (req, res) => {
 // gets one forum post by id
 router.get('/:id', async (req, res) => {
 
+  const { loggedIn } = req.session;
+
     const forumPost = await Post.findOne({
       where: {
         id: req.params.id,
@@ -61,27 +63,27 @@ router.get('/:id', async (req, res) => {
           attributes: ['id', 'username']
         }
       },
-
     }).catch((err) => {
       res.json(err);
     });
 
     const serialized = forumPost.get({ plain: true });
-    res.render('forum-post', serialized);
+    res.render('forum-post', { serialized, loggedIn });
 });
 
 // post comments to forum
 router.post('/:id', withAuth, async (req, res) => {
-
+  
   try {
-    const commentData = await Comment.create({
-      comment_entry: req.body.comment_entry,
-      forum_id: req.body.forum_id,
-      author_id: req.session.user_id
-    });
-    res
-      .status(200)
-      .json(commentData);
+      const commentData = await Comment.create({
+        comment_entry: req.body.comment_entry,
+        forum_id: req.body.forum_id,
+        author_id: req.session.user_id,
+      });
+      res
+        .status(200)
+        .json(commentData);
+    
   } catch (err) {
     console.log(err);
   }
