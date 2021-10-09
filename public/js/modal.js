@@ -4,9 +4,13 @@ var modal = document.getElementById('infoModal');
 var loginModal = document.getElementById('loginModal');
 //Get close button
 var closeBtn = document.getElementById('closeBtn');
+//Modal open on Forum page
+var forumModal = document.getElementById('forumModal')
 
 //Listen for click to init on modal here
 loginModal && loginModal.addEventListener('click', openModal);
+
+forumModal && forumModal.addEventListener('click', openModal);
 //Listen for close click
 closeBtn.addEventListener('click', closeModal);
 
