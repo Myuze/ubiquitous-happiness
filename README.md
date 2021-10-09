@@ -6,7 +6,7 @@
 ---
 Create a community forum to track trending-up streamers, featured streams, game releases and aid in the promotion of streamer channels using the Twitch and Steam API’s.
 
-![Hero](ub-hero.PNG)
+![Hero](ub-hero.png)
 
 ## Table of Contents:
 
