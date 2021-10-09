@@ -1,34 +1,7 @@
+/*specs*/
 :root {
     --def-clr-light: white;
     --def-clr-dark: black;
-}
-
-body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.main-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-
-.ubMainLink {
-    font-family: 'Permanent Marker', cursive;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-:hover.ubMainLink{
-    color: yellowgreen;
-}
-
-li {
-    display: inline;
-    padding-right: 10px;
-    margin-right: 20px;
 }
 
 .light {
@@ -39,21 +12,111 @@ li {
     background: var(--def-clr-dark);
 }
 
+/*Text*/
+.text-uppercase {
+    font-size:18px;
+    text-align: center;
+    font-family: 'permanent marker';
+}
+
+/*nav-bar*/
+.ubMainLink {
+    font-family: 'permanent marker';
+    text-decoration: none;
+    font-size: 22px;
+    background-color:black;
+    color: lime;
+    border: white solid thin;
+    padding: 5px;
+}
+
+:hover.ubMainLink{
+    color: black;
+    background-color: lime;
+}
+
+/*body*/
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+li {
+    display: inline;
+    padding-right: 10px;
+    margin-right: 20px;
+}
+
+p {
+    text-align: center;
+    font-family: monospace;
+    margin-top: -5%;
+    background-color: black;
+    font-size: 18px;
+}
+
+
+/*Bootstrap Overrides*/
+mt-5 {
+    margin-top:1rem!;
+}
+
+.me-5 {
+    font-family: monospace;
+}
+.mt-3 {
+    align-items: flex-start;
+}
+
+.mt-5 {
+    border-top: solid white thin;
+}
+.mb-4 {
+    margin-top: -2%;
+    font-size: 20px;
+}
+
+/*LOGO*/
 .logo {
-    margin: 15px;
     margin-left: 50px;
-    padding: 5px;
-    border: 5px solid white;
 }
 
-.logo-text {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 5px;
-    padding-bottom: 0px;
-    color: yellowgreen;
+.logo-image {
+    width: 25%;
 }
 
-.underline {
-    text-decoration: underline;
+
+/*Nav Bar*/
+.main-nav {
+    margin: 0 25px 10px 0;
+}
+.main-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 1%;
+}
+
+.section-header {
+    width: 60%;
+    height: 150px;
+    margin-bottom:1%;
+}
+
+
+/* .icon {
+    background-color: white;
+} */
+
+/*footer*/
+.foot {
+    background-color: black;
+}
+
+h6 {
+    border: solid thin white;
+    background-color: black;
+    color: lime;
+    margin-top: 1%;
 }

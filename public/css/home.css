@@ -1,0 +1,53 @@
+/*forum advert*/
+.forum-ad-gif {
+    border: solid white thick;
+}
+
+
+.hero {
+    margin-top: 10px;
+    border: solid;
+}
+
+/*twitch cards*/
+.twitch-card-container {
+    display: flex;
+}
+
+.twitch-card {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10px;
+    border: white solid thick;
+    height: 400px;
+    margin-right: 1%;
+}
+
+.section-header {
+    margin-top: 5%;
+    width: 60%;
+    height: 120px;
+    margin-bottom: 1%;
+}
+
+img {
+    height: inherit;
+    opacity: 1;
+}
+
+img:hover {
+    opacity: 0.5;
+}
+
+h5, p {
+    background-color:black;
+    font-weight: bold;
+    color:white;
+    font-family: monospace;
+    font-size:20px;
+
+}
+
+.game-name, .player-name {
+    border: thin lime solid;
+}
