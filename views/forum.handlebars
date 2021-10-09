@@ -9,16 +9,19 @@
   </div>
 </a>
 
-<div class="card-group">
+<div class="row row-cols-1 row-cols-md-3">
   {{#each forumPosts as |forum|}}
-  <a href="/forum/{{id}}"></a>
-  <div class="card forum-card">
-    <img class="blog-post-image" src="/images/logo.png">
-    <div class="card-body">
-      <h4 class="card-title">{{title}}</h4>
-      <p class="card-author">{{author}}</p>
-      <button class="read-more-btn">Read More</button>
+  <div class="col mb-5">
+    <div class="card forum-card">
+      <img class="blog-post-image" src="/images/logo.png">
+      <div class="card-body">
+        <h4 class="card-title">{{title}}</h4>
+        <p class="card-author">{{author}}</p>
+        <a href="/forum/{{id}}">
+          <button class="read-more-btn">Read More</button>
+        </a>
+      </div>
     </div>
   </div>
 {{/each}}
-
+</div>
