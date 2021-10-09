@@ -3,19 +3,18 @@
         "title": "this shit fire",
         "entry": "so I heard that there's this really cool streamer...",
         "date-posted": "September 1, 2021",
-        "author": "Florian Meneses",
-        "comments": ["hello", "world", "this is a comment"]
+        "author_id": 1
     },
     {
         "title": "awesome streamer!",
         "entry": "so like, I'm trying to find some new streamers who do y'all recommend?",
         "date-posted": "September 1, 2021",
-        "author": "Lernantino"
+        "author_id": 2
     },
     {
         "title": "mental health issues",
         "entry": "I can't take it anymore guys, there's just too much going on",
         "date-posted": "September 1, 2021",
-        "author": "Amiko"
+        "author_id": 3
     }
 ]
