@@ -24,12 +24,12 @@ function closeModal() {
   modal.style.display = 'none';
 }
 
-var starting = document.getElementById('submit');
+var starting = document.getElementById('loginSubmit');
 var form = document.getElementById('info');
 //Need to send info to DB for login
 
 //Blocks button from reloading page and calls functions to occur
-submit.addEventListener('click', function (e) {
+loginSubmit.addEventListener('click', function (e) {
   e.preventDefault();
   var email = document.getElementById('modalEmail').value;
   var password = document.getElementById('modalPassword').value;
@@ -44,5 +44,5 @@ submit.addEventListener('click', function (e) {
     })
   })
   .then(res => closeModal());
-
+  return
 });
