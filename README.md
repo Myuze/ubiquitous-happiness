@@ -1,5 +1,4 @@
 # Ubiquitous
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description:
 
@@ -64,10 +63,3 @@ Create a community forum to track trending-up streamers, featured streams, game 
 - Evelyn Nguyen
 - Nikki Mounce
 - Florian Meneses
-
-## Licenses:
-
----
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-**MIT License**
-Copyright &#169; <YEAR> <NAME>
