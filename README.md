@@ -1,10 +1,12 @@
-# Ubiquitous Happiness
+# Ubiquitous
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description:
 
 ---
 Create a community forum to track trending-up streamers, featured streams, game releases and aid in the promotion of streamer channels using the Twitch and Steam API’s.
+
+![Hero](ub-hero.PNG)
 
 ## Table of Contents:
 
