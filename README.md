@@ -4,7 +4,7 @@
 
 ---
 Create a community forum to track trending-up streamers, featured streams, game releases and aid in the promotion of streamer channels using the Twitch and Steam API’s.
-[Ubiquitous](https://ubiquitous-p2.herokuapp.com/)
+### [Ubiquitous Homepage](https://ubiquitous-p2.herokuapp.com/)
 
 ![Hero](ub-hero.png)
 
